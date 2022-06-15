@@ -4,7 +4,6 @@ function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $db, $pasap
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
-    echo "$data";
 };
 
 function ingresar_pasaporte($codigo, $db){
