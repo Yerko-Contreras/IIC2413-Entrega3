@@ -9,7 +9,7 @@
 
 <body>
     <br>
-    <h1 class="title is-3 has-text-centered">Inicio de sesión Prueba </h1>
+    <h1 class="title is-3 has-text-centered">Inicio de sesión</h1>
     <br>
 	<br>
 
