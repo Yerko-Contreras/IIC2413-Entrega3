@@ -178,8 +178,9 @@ BEGIN
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
+            RETURN 'Tickets reservados correctamente'
         END IF;
 
 
 END
-$$ language plpgsql
+language plpgsql
