@@ -93,7 +93,7 @@ BEGIN
             error = 1;
         END IF;
 
-        IF error = 0;
+        IF error = 0 THEN
             
             SELECT numero_ticket into n_ticket
             FROM ticket
