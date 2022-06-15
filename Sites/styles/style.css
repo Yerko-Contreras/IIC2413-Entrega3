@@ -32,13 +32,13 @@ table{
     margin-right: auto;
 }   
 
-th {
+/* th {
     border: 1px solid;
 }
 
 td{
     border: 1px solid;
-}
+} */
 
 tr:nth-child(even) {background: #EBF5FB}
 tr:nth-child(odd) {background: #D6EAF8}
