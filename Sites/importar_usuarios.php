@@ -37,7 +37,7 @@ $data = $result -> fetchAll();
 
 foreach ($data as $d){
     #GENERADOR DE CONTRASEÑAS INSPIRADO EN https://www.geeksforgeeks.org/generating-random-string-using-php/
-    $caracteres= '$data[1]';
+    $caracteres= "$data[1]";
     $largo = rand(5, 10);
     $contrasena = substr('$data[0]', 0, 4);
     for ($i = 0; $i < $largo; $i = $i + 1){
