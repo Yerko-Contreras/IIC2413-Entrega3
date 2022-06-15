@@ -52,9 +52,8 @@ foreach ($data as $d){
     $result -> execute();
 }
 
-echo "<script>alert('Los usuarios han sido importados, redirigiendo a inicio')</script>";
-sleep(2);
+echo '<script>alert("Los usuarios han sido importados, redirigiendo a inicio")</script>';
 
-header('Location: index.php');
-exit();
+
+require('index.php');
 ?>
