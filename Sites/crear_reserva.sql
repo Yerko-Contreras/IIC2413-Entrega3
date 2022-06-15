@@ -1,10 +1,11 @@
 CREATE OR REPLACE FUNCTION
 
-crear_reserva(codigo varchar, pasaporte_1 varchar, pasaporte_2 varchar, pasaporte_3 varchar)
+crear_reserva(codigo varchar, pasaporte_1 varchar, pasaporte_2 varchar, pasaporte_3 varchar, pasaporte_com varchar)
 
 RETURNS varchar as $$
 
 DECLARE
+
     hay_pasaporte_1 integer;
     hay_pasaporte_2 integer;
     hay_pasaporte_3 integer;
@@ -16,6 +17,9 @@ DECLARE
     vuelo_a_reservar RECORD;
     n_ticket integer;
     n_reserva integer;
+    n_asiento integer;
+    vuelo_id_codigo integer;
+
 BEGIN
 
     hay_pasaporte_1 = 0;
@@ -23,6 +27,10 @@ BEGIN
     hay_pasaporte_3 = 0;
     error = 0;
     hay_pasaportes = 0;
+
+    SELECT vuelo_id into vuelo_id_codigo
+    FROM vuelo
+    WHERE codigo_vuelo = codigo;
     
     SELECT * INTO vuelo_a_reservar
     FROM vuelo
@@ -93,7 +101,7 @@ BEGIN
                 FROM ticket
             );
 
-            n_ticket += 1;
+            n_ticket = n_ticket + 1;
 
             SELECT reserva_id into n_reserva
             FROM reserva
@@ -104,31 +112,70 @@ BEGIN
 
             n_reserva += 1;
 
+            IF n_reserva <= 9999 THEN
+                TO_CHAR(n_reserva, 'fm0000') AS n_reserva;
+            END IF;
+
+            SELECT ticket.numero_asiento into n_asiento
+            FROM ticket
+            WHERE ticket.vuelo_id = vuelo_id_codigo AND
+            ticket.numero_asiento >= ALL(
+                SELECT ticket.numero_asiento
+                FROM ticket
+                WHERE ticket.vuelo_id = vuelo_id_codigo
+            ); 
+            n_asiento = n_asiento +1;
+
+
             IF hay_pasaporte_1 THEN
                 INSERT INTO reserva (
-                    reserva_id, numero_ticket, pasaporte_comprador
+                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, n_ticket, pasaporte_1
+                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
+                ); 
+
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_1
                 );
-                n_ticket += 1;
+
+                n_ticket = n_ticket + 1;
+                n_asiento = n_asiento + 1;
             END IF;
 
             IF hay_pasaporte_2 THEN
                 INSERT INTO reserva (
-                    reserva_id, numero_ticket, pasaporte_comprador
+                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, n_ticket, pasaporte_2
+                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
-                n_ticket += 1;
+
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_2
+                );
+
+                n_ticket = n_ticket + 1;
+                n_asiento = n_asiento + 1;
             END IF;
 
             IF hay_pasaporte_3 THEN
                 INSERT INTO reserva (
-                    reserva_id, numero_ticket, pasaporte_comprador
+                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, n_ticket, pasaporte_3
+                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
-                n_ticket += 1;
+
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_3
+                );
+                
+                n_ticket = n_ticket + 1;
+                n_asiento = n_asiento + 1;
             END IF;
         END IF;
 

@@ -1,8 +1,10 @@
 <?php 
-function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $db){
-    $query = "SELECT * FROM crear_reserva('$codigo', '$pasaporte_1', '$pasaporte_2', '$pasaporte_3');";
+function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $db, $pasaporte){
+    $query = "SELECT * FROM crear_reserva('$codigo', '$pasaporte_1', '$pasaporte_2', '$pasaporte_3', '$pasaporte');";
     $result = $db -> prepare($query);
     $result -> execute();
+    $data = $result -> fetchAll();
+    echo "$data";
 };
 
 function ingresar_pasaporte($codigo, $db){
@@ -100,7 +102,7 @@ function ingresar_pasaporte($codigo, $db){
             <td>$d[1]</td>
             <td>$d[2]</td>
             <td>$d[3]</td>
-            <td><button onclick=ingresar_pasaporte($d[0], $db)></td>";
+            <td><button onclick=ingresar_pasaporte($d[0], $db, $pasaporte)></td>";
     }
 }
 ?>
