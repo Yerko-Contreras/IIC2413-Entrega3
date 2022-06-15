@@ -180,7 +180,6 @@ BEGIN
             END IF;
             RETURN 'Tickets reservados correctamente';
         END IF;
-
-
+    END IF;
 END $$
 language plpgsql
