@@ -19,6 +19,7 @@ DECLARE
     n_reserva integer;
     n_asiento integer;
     vuelo_id_codigo integer;
+    error integer;
 
 BEGIN
 
