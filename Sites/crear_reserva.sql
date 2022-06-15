@@ -111,7 +111,7 @@ BEGIN
                 FROM reserva
             );
 
-            n_reserva += 1;
+            n_reserva = n_reserva + 1;
 
             IF n_reserva <= 9999 THEN
                 TO_CHAR(n_reserva, 'fm0000') AS n_reserva;
