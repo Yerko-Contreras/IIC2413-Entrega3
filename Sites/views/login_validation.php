@@ -10,7 +10,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         
-        require("./config/conection.php");
+        require("../config/conection.php");
         $query = "SELECT * 
             FROM Usuarios
             WHERE username = '$username' AND
