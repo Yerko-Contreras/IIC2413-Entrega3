@@ -38,7 +38,8 @@ $result -> execute();
 $data = $result -> fetchAll();
 
 foreach ($data as $d){
-    echo "$data[0]";
+    $username = implode($data[0]);
+    echo "$username";
     #GENERADOR DE CONTRASEÑAS INSPIRADO EN https://www.geeksforgeeks.org/generating-random-string-using-php/
     $caracteres= "$data[1]";
     $largo = rand(5, 10);
