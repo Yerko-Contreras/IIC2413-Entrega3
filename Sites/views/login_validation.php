@@ -19,7 +19,7 @@
         $result -> execute();
         $data = $result -> fetchAll();
         
-        if ($data) {
+        if (!empty($data)) {
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
             $_SESSION['username'] = $data[0];
