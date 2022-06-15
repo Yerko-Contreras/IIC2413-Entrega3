@@ -5,7 +5,7 @@
 
 <?php
     $msg = '';
-    if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password']))
+    if (isset($_POST['login']) && $_POST['username'] == "DGAC" && $_POST['password'] == "admin")
     {
         $rut = $_POST['username'];
         $user_password = $_POST['password'];

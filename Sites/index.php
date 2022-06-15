@@ -11,7 +11,7 @@
 
 <body>
     <br>
-    <h1 class="title is-3 has-text-centered"> Pagina de Vuelos</h1>
+    <h1 class="title is-3 has-text-centered" align="center" > Pagina de Vuelos</h1>
     <br>
     <?php
         if (!isset($_SESSION['username'])) {
