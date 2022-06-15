@@ -21,7 +21,7 @@ BEGIN
     IF id_mas_grande IS NULL THEN 
         id_mas_grande = 1;
     ELSE
-        id_mas_grande += 1;
+        id_mas_grande = id_mas_grande + 1;
     END IF;
     
     SELECT * INTO usuario 
