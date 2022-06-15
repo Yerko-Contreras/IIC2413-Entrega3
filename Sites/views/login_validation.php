@@ -10,8 +10,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         
-        try {
-        require("config/conection.php");
+        require("./config/conection.php");
         $query = "SELECT * 
             FROM Usuarios
             WHERE username = '$username' AND
@@ -20,18 +19,19 @@
         $result -> execute();
         $data = $result -> fetchAll();
         
-        $_SESSION['valid'] = true;
-        $_SESSION['timeout'] = time();
-        $_SESSION['username'] = $data[0];
-        $_SESSION['password'] = $data[1];
-        $_SESSION['tipo'] = $data[2];
-        
+        if ($data) {
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+            $_SESSION['username'] = $data[0];
+            $_SESSION['password'] = $data[1];
+            $_SESSION['tipo'] = $data[2];
+        } else {
         $msg = "Sesión iniciada correctamente";
         header("Location: ../index.php?msg=$msg");
 
-        } catch (Exception $e) {
+        
             $msg = 'Login Invalido';
-            header("Location: ../views/login.php?msg=$msg");
-        }   
-    }
+            header("Location: ../views/login.php?msg=$msg"); 
+        };
+    };
 ?>
