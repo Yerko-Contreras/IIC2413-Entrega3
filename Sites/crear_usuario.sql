@@ -37,5 +37,5 @@ BEGIN
             id_mas_grande, username_nuevo, contrasena_nueva, tipo_nuevo
         );
     END IF;
-END 
+END;
 $$ language plpgsql

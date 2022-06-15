@@ -182,5 +182,5 @@ BEGIN
         END IF;
 
 
-END
+END; $$
 language plpgsql
