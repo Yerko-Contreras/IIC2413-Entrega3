@@ -13,9 +13,11 @@
         $_SESSION['timeout'] = time();
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
-    
-    if ($_SESSION['username'] == "Yerko")
         $msg = "Sesión iniciada correctamente";
         header("Location: ../index.php?msg=$msg");
+    }
+    else{
+        $msg = 'Login Invalido';
+        header("Location: ../views/login.php?msg=$msg");
     }
 ?>

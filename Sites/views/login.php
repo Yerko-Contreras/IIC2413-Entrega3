@@ -13,10 +13,15 @@
     <br>
 	<br>
 
-
+    <?php
+    if ($msg != "")
+    { 
+        echo "<h3 class='notification is-danger is-light' align='center'>" . $msg . "</h3>";
+    }
+    ?>
 
     <form class="form-signin" role="form" action="login_validation.php" method="post">
-        <?php echo $msg; ?>
+
 
         
         <input type="text" name="username" class="input is-info control mb-3 is-fullwidth" placeholder="nombre de usuario" required autofocus>
