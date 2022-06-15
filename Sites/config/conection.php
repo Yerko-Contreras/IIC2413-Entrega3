@@ -1,5 +1,4 @@
 <?php
-    echo "<h1>hola</h1>";
     try {
         require('data.php');
         $db = new PDO("pgsql:dbname=$db_name;host=localhost;port=5432;user=$user;password=$password");
