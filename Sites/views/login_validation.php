@@ -11,6 +11,7 @@
         $password = $_POST['password'];
         
         try {
+        require("config/conection.php");
         $query = "SELECT * 
             FROM Usuarios
             WHERE username = '$username' AND
