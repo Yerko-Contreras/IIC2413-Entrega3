@@ -30,9 +30,7 @@ BEGIN
     tipo = tipo_nuevo
     LIMIT(1);
 
-    IF usuario IS NOT NULL THEN
-        RAISE EXCEPTION 'Este usuario ya existe';
-    ELSE
+    IF usuario IS NULL THEN
         INSERT INTO Usuarios (
             id, username, contrasena, tipo
         ) VALUES (
