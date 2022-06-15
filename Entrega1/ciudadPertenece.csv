@@ -1,0 +1,41 @@
+ciudadId,paisId,nombre
+0,0,Antofagasta
+1,0,Calama
+2,0,Arica
+3,0,Talcahuano
+4,0,Freire
+5,0,Puerto Montt
+6,0,Punta Arenas
+7,0,Pudahuel
+8,0,Iquique
+9,0,Isla de Pascua
+10,1,Miami
+11,1,Nueva York
+12,1,California
+13,1,Chicago
+14,1,Las Vegas
+15,1,San Francisco
+16,1,San Diego
+17,1,Seattle
+18,1,Houston
+19,1,Phoenix
+20,2,Curitiba
+21,2,Natal
+22,2,Sao Pablo
+23,2,Rio Janeiro
+24,2,Brasilia
+25,2,Porto Alegre
+26,2,Manaos
+27,2,Recife
+28,2,Florianopolis
+29,2,Belen
+30,3,Buenos Aires
+31,3,Cordoba
+32,3,Rosario
+33,3,Mar del Plata
+34,3,Salta
+35,3,Santa Fe
+36,3,Corrientes
+37,3,Mendoza
+38,3,Misiones
+39,3,Entre Rios
