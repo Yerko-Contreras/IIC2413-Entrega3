@@ -51,4 +51,9 @@ foreach ($data as $d){
     $result = $db -> prepare($query);
     $result -> execute();
 }
+
+echo "<script type='text/javascript'>alert('Los usuarios han sido importados');</script>";
+
+header('Location: index.php');
+exit();
 ?>
