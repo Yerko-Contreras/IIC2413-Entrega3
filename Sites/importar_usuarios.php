@@ -27,6 +27,8 @@ foreach ($data as $d){
     $query = "SELECT * FROM crear_usuario('$d[0]', '$contrasena', 'Compania Aerea');"; 
     $result = $db -> prepare($query);
     $result -> execute();
+    $data = $result -> fetchAll();
+
 }    
 
 $query = "SELECT pasaporte, nombre
