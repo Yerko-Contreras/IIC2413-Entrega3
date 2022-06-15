@@ -22,12 +22,12 @@ body {
     font-size: 20px;
     }
 
-img.center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    }
     
+    }
 h1,
 h2,
 h3,
