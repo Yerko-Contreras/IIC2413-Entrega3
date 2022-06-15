@@ -50,5 +50,3 @@ foreach ($data as $d){
     $result -> execute();
 }
 ?>
-
-<h1>Hola</h1>
