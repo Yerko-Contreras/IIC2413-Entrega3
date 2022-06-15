@@ -53,7 +53,7 @@ foreach ($data as $d){
 }
 
 echo "<script>alert('Los usuarios han sido importados, redirigiendo a inicio')</script>";
-
+sleep(2);
 
 header('Location: index.php');
 exit();
