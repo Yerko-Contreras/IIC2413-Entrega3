@@ -91,7 +91,7 @@ BEGIN
         IF vuelos_reservados IS NOT NULL THEN
             RETURN'Uno de los usuarios tiene un vuelo en las fechas programadas';
             error = 1;
-        END IF
+        END IF;
 
         IF error = 0;
             
