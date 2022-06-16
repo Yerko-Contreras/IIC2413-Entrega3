@@ -20,17 +20,13 @@
         $data = $result -> fetchAll();
         $data = $data[0];
         
-        echo "$contrasena";
-        echo "$username";
-        echo "$data[0]";
-        echo "$data[1]";
 
         if (!(empty($data))) {
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
-            $_SESSION['username'] = $data[0];
-            $_SESSION['password'] = $data[1];
-            $_SESSION['tipo'] = $data[2];
+            $_SESSION['username'] = $data[1];
+            $_SESSION['password'] = $data[2];
+            $_SESSION['tipo'] = $data[3];
             if ($_SESSION['tipo'] = 'Pasajero') {
                 header("Location: ../pasajeros.php");
             } else {
