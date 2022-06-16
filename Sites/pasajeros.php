@@ -100,8 +100,7 @@ session_start();
         sal.nombre_ciudad = '$ciudad_de_origen' AND
         lle.nombre_ciudad = '$ciudad_de_destino' AND
         CAST(Informacion_de_vuelo.fecha_salida AS date) = CAST('$fecha_despegue' AS DATE);";
-    echo "$query";
-    $result = $db -> prepare($query);
+    $result = $db2 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
 
