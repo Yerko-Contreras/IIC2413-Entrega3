@@ -105,7 +105,7 @@ session_start();
     $data = $result -> fetchAll();
 
     if (!(empty($data))) {
-    echo "<table id='Vuelos'>
+    echo "hola<table id='Vuelos'>
         <tr>
             <th> Código de Vuelo </th>
             <th> Código de Aeronave </th>
@@ -113,6 +113,7 @@ session_start();
             <th> Aeródromo Llegada </th>
             <th> Reservar </th>
         </tr>";
+    
     foreach ($data as $d){
         echo "<tr>
             <td>$d[0]</td>
@@ -121,7 +122,7 @@ session_start();
             <td>$d[3]</td>
             <td><button onclick=ingresar_pasaporte($d[0], $pasaporte)></td> 
             </tr>";
-    }}
+    };}
 }
 }
 ?>
