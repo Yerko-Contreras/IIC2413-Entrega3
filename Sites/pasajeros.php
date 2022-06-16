@@ -37,11 +37,11 @@ session_start();
     $result -> execute();
     $data = $result -> fetchAll();
 
-    
+    echo "Tus Reservas: \n";
     echo "<table id='vuelos_reservados'>
         <tr>
-            <th> Pasaporte </th>
-            <th> Nombre </th>
+            <th> Codigo de Reserva </th>
+            <th> Número de Ticket </th>
         <tr>";
     
         foreach ($data as $d){
@@ -54,7 +54,7 @@ session_start();
         FROM Propuestas, Informacion_de_vuelo, aerodromos
         WHERE Propuestas.informacion_id = Informacion_de_vuelo.informacion_id AND
         Informacion_de_vuelo.aerodromo_id_sal = Aerodromos.aerodromo_id;";
-    $result = $db -> prepare($query);
+    $result = $db2 -> prepare($query);
     $result -> execute();
     $data_salida = $result -> fetchAll();
 
@@ -62,10 +62,12 @@ session_start();
         FROM Propuestas, Informacion_de_vuelo, aerodromos
         WHERE Propuestas.informacion_id = Informacion_de_vuelo.informacion_id AND
         Informacion_de_vuelo.aerodromo_id_lle = Aerodromos.aerodromo_id;";
-    $result = $db -> prepare($query);
+    $result = $db2 -> prepare($query);
     $result -> execute();
     $data_llegada = $result -> fetchAll();
     ?>
+    
+    <br>
 
     <form method="post">
         Ciudad de origen: <select name="ciudad_de_origen">
