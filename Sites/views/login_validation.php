@@ -31,8 +31,12 @@
             $_SESSION['username'] = $data[0];
             $_SESSION['password'] = $data[1];
             $_SESSION['tipo'] = $data[2];
+            if ($_SESSION['tipo'] = 'pasajero') {
+                header("Location: ../pasajeros.php");
+            } else {
             $msg = "Sesión iniciada correctamente";
             header("Location: ../index.php?msg=$msg");
+            };
         } else {
             $msg = 'Login Invalido';
             header("Location: ../views/login.php?msg=$msg");
