@@ -29,6 +29,7 @@ session_start();
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
+    $data = $data[0];
 
     echo "Pasaporte: $pasaporte
         Nombre: $data[0]";
