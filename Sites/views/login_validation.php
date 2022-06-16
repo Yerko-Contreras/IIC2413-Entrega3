@@ -18,6 +18,7 @@
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
+        $data = $data[0];
         
         echo "$contrasena";
         echo "$username";
@@ -37,3 +38,4 @@
         };
     };
 ?>
+header("Location: ../index.php?msg=$msg");
