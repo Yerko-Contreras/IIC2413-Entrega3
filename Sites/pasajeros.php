@@ -25,7 +25,7 @@ session_start();
     $pasaporte = $_SESSION['username'];
     $query = "SELECT nombre
         FROM pasajeros_compradores
-        WHERE pasaporte = $pasaporte;";
+        WHERE pasaporte = '$pasaporte';";
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
