@@ -13,8 +13,8 @@
         require("../config/conection.php");
         $query = "SELECT * 
             FROM Usuarios
-            WHERE username = $username AND
-            contrasena = $contrasena";
+            WHERE username = '$username' AND
+            contrasena = '$contrasena'";
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
