@@ -31,7 +31,7 @@ session_start();
     $data = $result -> fetchAll();
 
     echo "Pasaporte: $pasaporte
-        Nombre: $data";
+        Nombre: $data[0]";
     
     $query = "SELECT codigo_reserva, numero_ticket
         FROM Reserva
