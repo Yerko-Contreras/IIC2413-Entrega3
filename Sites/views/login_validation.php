@@ -32,7 +32,7 @@
             $_SESSION['password'] = $data[1];
             $_SESSION['tipo'] = $data[2];
             if ($_SESSION['tipo'] = 'Pasajero') {
-                header("Location: ../index.php");
+                header("Location: ../pasajeros.php");
             } else {
             $msg = "Sesión iniciada correctamente";
             header("Location: ../index.php?msg=$msg");

@@ -13,6 +13,12 @@ function ingresar_pasaporte($codigo, $db){
         <button onclick='reservar($codigo, document.getElementById(pasaporte_1), document.getElementById(pasaporte_2), document.getElementById(pasaporte_3), $db) />";
 };
 
+session_start();
+    if (isset($_SESSION['username'])){
+        echo "Bienvenido/a: ";
+        echo $_SESSION['username'];
+    }
+    
     if($_SESSION['tipo']){
     
     $pasaporte = $_SESSION['username'];
