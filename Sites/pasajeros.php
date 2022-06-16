@@ -1,16 +1,17 @@
 <?php 
-function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $db, $pasaporte){
+function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte){
+    require("config/conection.php");
     $query = "SELECT * FROM crear_reserva('$codigo', '$pasaporte_1', '$pasaporte_2', '$pasaporte_3', '$pasaporte');";
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
 };
 
-function ingresar_pasaporte($codigo, $db){
+function ingresar_pasaporte($codigo, $pasaporte){
     echo "<input type='text' id=x'pasaporte_1' />
         <input type='text' id='pasaporte_2' />
         <input type='text' id='pasaporte_3' />
-        <button onclick='reservar($codigo, document.getElementById(pasaporte_1), document.getElementById(pasaporte_2), document.getElementById(pasaporte_3), $db) />";
+        <button onclick='reservar($codigo, document.getElementById(pasaporte_1), document.getElementById(pasaporte_2), document.getElementById(pasaporte_3), $pasaporte) />";
 };
 
 session_start();
@@ -116,7 +117,7 @@ session_start();
             <td>$d[1]</td>
             <td>$d[2]</td>
             <td>$d[3]</td>
-            <td><button onclick=ingresar_pasaporte($d[0], $db, $pasaporte)></td> 
+            <td><button onclick=ingresar_pasaporte($d[0], $pasaporte)></td> 
             </tr>";
     }
 }
