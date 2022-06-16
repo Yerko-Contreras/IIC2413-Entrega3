@@ -79,6 +79,7 @@ session_start();
     </form>
 
     <?php
+    if (isset($_POST['ciudad_de_origen']) && isset($_POST['ciudad_de_destino']) && isset($_POST['fecha_despegue'])){
     $ciudad_de_origen = $_POST['ciudad_de_origen'];
     $ciudad_de_destino = $_POST['ciudad_de_destino'];
     $fecha_despegue = $_POST['fecha_despegue'];
@@ -110,5 +111,6 @@ session_start();
             <td>$d[3]</td>
             <td><button onclick=ingresar_pasaporte($d[0], $db, $pasaporte)></td>";
     }
+}
 }
 ?>
