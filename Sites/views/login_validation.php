@@ -19,19 +19,17 @@
         $result -> execute();
         $data = $result -> fetchAll();
         
+        echo "$data[0]";
+        echo "$data[1]";
+
         if (!(empty($data))) {
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
             $_SESSION['username'] = $data[0];
             $_SESSION['password'] = $data[1];
             $_SESSION['tipo'] = $data[2];
+            
         } else {
-        $msg = "Sesión iniciada correctamente";
-        header("Location: ../index.php?msg=$msg");
-
-        
-            $msg = 'Login Invalido';
-            header("Location: ../views/login.php?msg=$msg"); 
         };
     };
 ?>
