@@ -32,7 +32,7 @@ session_start();
     
     $query = "SELECT codigo_reserva, numero_ticket
         FROM Reserva
-        WHERE pasaporte_comprador = $pasaporte;";
+        WHERE pasaporte_comprador = '$pasaporte';";
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
