@@ -14,10 +14,6 @@ function ingresar_pasaporte($codigo, $db){
 };
 
 session_start();
-    if (isset($_SESSION['username'])){
-        echo "Bienvenido/a: ";
-        echo $_SESSION['username'];
-    }
 
     if($_SESSION['tipo']){
     require("config/conection.php");
@@ -66,13 +62,13 @@ session_start();
     <form method="post">
         Ciudad de origen: <select name="ciudad_de_origen">
             <?php foreach ($data_salida as $d){
-                echo "<option value='$d'>$d</optio>";
+                echo "<option value='$d[0]'>$d[0]</optio>";
             }
             ?>
         </select>
         Ciudad de destino: <select name="ciudad_de_destino">
             <?php foreach ($data_llegada as $d){
-                echo "<option value='$d'>$d</optio>";
+                echo "<option value='$d[0]'>$d[0]</optio>";
             }
             ?>
         Fecha de despegue: <input type="date" name="fecha_despegue" />
