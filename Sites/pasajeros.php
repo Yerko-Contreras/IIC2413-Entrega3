@@ -102,7 +102,8 @@ session_start();
         CAST(Informacion_de_vuelo.fecha_salida AS date) = CAST('$fecha_despegue' AS DATE);";
     $result = $db -> prepare($query);
     $result -> execute();
-    $data_llegada = $result -> fetchAll();
+    $data = $result -> fetchAll();
+    if (!empty($data)){
     echo "<table id = 'Vuelos'>
         <tr>
             <th> Código de Vuelo </th>
@@ -119,7 +120,7 @@ session_start();
             <td>$d[3]</td>
             <td><button onclick=ingresar_pasaporte($d[0], $pasaporte)></td> 
             </tr>";
-    }
+    }}
 }
 }
 ?>
