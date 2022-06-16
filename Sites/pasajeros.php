@@ -97,8 +97,8 @@ session_start();
         Informacion_de_vuelo.aerodromo_id_sal = sal.aerodromo_id AND
         Informacion_de_vuelo.aerodromo_id_lle = lle.aerodromo_id AND
         Informacion_de_vuelo.estado = 'aceptado' AND
-        sal.nombre_ciudad = '$ciudad_de_origen' AND
-        lle.nombre_ciudad = '$ciudad_de_destino' AND
+        sal.nombre_ciudad = $ciudad_de_origen AND
+        lle.nombre_ciudad = $ciudad_de_destino AND
         CAST(Informacion_de_vuelo.fecha_salida AS date) = CAST('$fecha_despegue' AS DATE);";
     $result = $db -> prepare($query);
     $result -> execute();
