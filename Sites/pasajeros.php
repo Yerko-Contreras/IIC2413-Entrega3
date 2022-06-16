@@ -104,10 +104,8 @@ session_start();
     $result -> execute();
     $data = $result -> fetchAll();
 
-    echo "$data";
-
     if (!(empty($data))) {
-    echo "<table id = 'Vuelos'>
+    echo "<table id='Vuelos'>
         <tr>
             <th> Código de Vuelo </th>
             <th> Código de Aeronave </th>
