@@ -18,8 +18,9 @@ session_start();
         echo "Bienvenido/a: ";
         echo $_SESSION['username'];
     }
-    
+
     if($_SESSION['tipo']){
+    require("config/conection.php");
     
     $pasaporte = $_SESSION['username'];
     $query = "SELECT nombre
