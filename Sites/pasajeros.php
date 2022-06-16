@@ -103,7 +103,10 @@ session_start();
     $result = $db -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
-    if (!(empty($data))){
+
+    echo "$data";
+
+    if (!(empty($data))) {
     echo "<table id = 'Vuelos'>
         <tr>
             <th> Código de Vuelo </th>
