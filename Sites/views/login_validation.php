@@ -19,6 +19,8 @@
         $result -> execute();
         $data = $result -> fetchAll();
         
+        echo "$password";
+        echo "$username";
         echo "$data[0]";
         echo "$data[1]";
 
