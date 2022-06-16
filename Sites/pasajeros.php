@@ -104,7 +104,7 @@ session_start();
     $result -> execute();
     $data = $result -> fetchAll();
 
-    if ((empty($data))) {
+    if (!(empty($data))) {
         echo "hola";
     echo "<table id='Vuelos'>
         <tr>
