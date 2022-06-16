@@ -91,7 +91,7 @@ session_start();
     $ciudad_de_origen = $_POST['ciudad_de_origen'];
     $ciudad_de_destino = $_POST['ciudad_de_destino'];
     $fecha_despegue = $_POST['fecha_despegue'];
-    $query = "SELECT Informacion_de_vuelo.codigo, Informacion_de_vuelo.codigo_aeronave, sal.icao, lle.icao
+    $query = "SELECT Informacion_de_vuelo.codigo, Informacion_de_vuelo.codigo_aeronave, sal.codigo_icao, lle.codigo_icao
         FROM Propuestas, Informacion_de_vuelo, Aerodromos as sal, Aerodromos as lle
         WHERE Propuestas.informacion_id = Informacion_de_vuelo.informacion_id AND
         Informacion_de_vuelo.aerodromo_id_sal = sal.aerodromo_id AND
