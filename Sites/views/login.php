@@ -28,7 +28,7 @@
         
 
         
-        <input  type="password" name="password" class="input is-info control mb-3 is-fullwidth" placeholder="contraseña" required>
+        <input  type="password" name="contrasena" class="input is-info control mb-3 is-fullwidth" placeholder="contraseña" required>
         
 
     

@@ -8,18 +8,18 @@
     if (isset($_POST['login']))
     {   
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $contrasena = $_POST['contrasena'];
         
         require("../config/conection.php");
         $query = "SELECT * 
             FROM Usuarios
             WHERE username = $username AND
-            contrasena = $password";
+            contrasena = $contrasena";
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
         
-        echo "$password";
+        echo "$contrasena";
         echo "$username";
         echo "$data[0]";
         echo "$data[1]";
