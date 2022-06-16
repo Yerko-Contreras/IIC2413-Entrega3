@@ -37,9 +37,17 @@ session_start();
     $result -> execute();
     $data = $result -> fetchAll();
 
-    foreach ($data as $d){
-        echo "Codigo de reserva: $d[0]
-            Número de ticket: $d[1]";
+    
+    echo "<table id='vuelos_reservados'>
+        <tr>
+            <th> Pasaporte </th>
+            <th> Nombre </th>
+        <tr>";
+    
+        foreach ($data as $d){
+        echo "<tr>
+        <td> $d[0] </td>
+        <td> $d[1] </td>";
     }
 
     $query = "SELECT DISTINCT Aerodromos.nombre_ciudad
@@ -106,7 +114,8 @@ session_start();
             <td>$d[1]</td>
             <td>$d[2]</td>
             <td>$d[3]</td>
-            <td><button onclick=ingresar_pasaporte($d[0], $db, $pasaporte)></td>";
+            <td><button onclick=ingresar_pasaporte($d[0], $db, $pasaporte)></td> 
+            </tr>";
     }
 }
 }
