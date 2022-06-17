@@ -27,12 +27,13 @@
             $_SESSION['username'] = $data[1];
             $_SESSION['password'] = $data[2];
             $_SESSION['tipo'] = $data[3];
-            if ($_SESSION['tipo'] = 'Pasajero') {
+            if ($_SESSION['tipo'] == 'Pasajero') {
                 header("Location: ../pasajeros.php");
-            } else {
-            $msg = "Sesión iniciada correctamente";
-            header("Location: ../index.php?msg=$msg");
-            };
+            } elseif ($_SESSION['username'] == 'DGAC' && $_SESSION['password'] == 'admin') {
+                $msg = "Sesión iniciada correctamente";
+                header("Location: ../views/index.php?msg=$msg");
+            }else{}
+            ;
         } else {
             $msg = 'Login Invalido';
             header("Location: ../views/login.php?msg=$msg");
