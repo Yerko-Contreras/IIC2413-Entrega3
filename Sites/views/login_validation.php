@@ -31,7 +31,7 @@
                 header("Location: ../pasajeros.php");
             } elseif ($_SESSION['username'] == 'DGAC' && $_SESSION['password'] == 'admin') {
                 $msg = "Sesión iniciada correctamente";
-                header("Location: ../views/index.php?msg=$msg");
+                header("Location: ../views/admin_DGAC.php?msg=$msg");
             }else{}
             ;
         } else {
