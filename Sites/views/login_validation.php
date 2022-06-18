@@ -18,14 +18,13 @@
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
-
         $data = $data[0];
         
 
         if (!(empty($data))) {
             $_SESSION['valid'] = true;
             $_SESSION['timeout'] = time();
-            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['username'] = $data[1];
             $_SESSION['password'] = $data[2];
             $_SESSION['tipo'] = $data[3];
             if ($_SESSION['tipo'] == 'Pasajero') {
