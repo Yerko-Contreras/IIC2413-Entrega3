@@ -31,13 +31,10 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<td>$p[0]</td><td>$p[1]</td>";
+          echo "<td><input type='radio' name='Button1' value='buy'></td>";
+
+          echo "<td><input type='radio' name='buysell' value='buy'></td>";
           
-          if(isset($_POST['button1'])) {
-            echo "This is Button1 that is selected";
-          }
-          if(isset($_POST['button2'])) {
-              echo "This is Button2 that is selected";
-          }
           echo "</tr>";
       }
       ?>
