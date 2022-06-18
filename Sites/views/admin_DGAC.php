@@ -23,16 +23,12 @@
         // echo $resultado;
         foreach ($resultado as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-          if(array_key_exists('button1', $_POST)) {
-            button1();
+          
+          if(isset($_POST['button1'])) {
+            echo "This is Button1 that is selected";
           }
-          else if(array_key_exists('button2', $_POST)) {
-            button2();
-          }
-          function button1() {
-              echo "This is Button1 that is selected";
-          }
-          function button2() {
+
+          if(isset($_POST['button2'])) {
               echo "This is Button2 that is selected";
           }
       }
@@ -40,12 +36,12 @@
       
   </table>
 
-<form method="post">
+  <form method="post">
       <input type="submit" name="button1"
-              class="button" value="Button1" />
+              value="Button1"/>
         
       <input type="submit" name="button2"
-              class="button" value="Button2" />
+              value="Button2"/>
   </form>
-
+  
 <?php include('../templates/footer.html'); ?>
