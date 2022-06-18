@@ -31,9 +31,9 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<td>$p[0]</td><td>$p[1]</td>";
-          echo "<td><input type='radio' name='Button1' value='buy'></td>";
+          echo "<td><input type='button' name='Button1' value='buy'></td>";
 
-          echo "<td><input type='radio' name='buysell' value='buy'></td>";
+          echo "<td><input type='button' name='buysell' value='buy'></td>";
           
           echo "</tr>";
       }
@@ -41,12 +41,6 @@
       
   </table>
 
-  <form method="post">
-      <input type="submit" name="button1"
-              value="Button1"/>
-        
-      <input type="submit" name="button2"
-              value="Button2"/>
-  </form>
+
 
 <?php include('../templates/footer.html'); ?>
