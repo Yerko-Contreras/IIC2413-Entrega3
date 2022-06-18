@@ -42,22 +42,19 @@
                 <input type="submit" value="Cerrar sesión">
             </form>
         <?php
-        } elseif ($_SESSION['username'] == "DGAC" && $_SESSION['password']== "admin"){
+        } elseif ($_SESSION['username'] == "Compania Aerea" && $_SESSION['password']== "vuelo"){
         ?>
-            <form align="center" action="consultas/pokemones.php" method="post">
-                <input type="submit" value="Ver pokemones">
-            </form>
+
+
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión">
             </form>
-            <form align="center" action="consultas/pelea_pokemon.php" method="post">
-                <input type="submit" value="Ver peleas">
-            </form>
-            <form align="center" action="consultas/crear_pelea_pokemon.php" method="post">
+
+            <!--<form align="center" action="consultas/crear_pelea_pokemon.php" method="post">
                 <input type="text" name="pid1">
                 <input type="text" name="pid2">
                 <input type="submit" value="Crear pelea">
-            </form>
+            </form>-->
             <?php } else { ?>
                 <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión">
