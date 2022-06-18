@@ -29,10 +29,14 @@
             $_SESSION['tipo'] = $data[3];
             if ($_SESSION['tipo'] == 'Pasajero') {
                 $msg = "Sesión iniciada correctamente";
-                header("Location: ../views/compania_aerea.php?msg=$msg");
+                header("Location: ../pasajeros.php?msg=$msg");
             } elseif ($_SESSION['tipo'] == 'Admin DGAC') {
                 $msg = "Sesión iniciada correctamente";
                 header("Location: ../views/admin_DGAC.php?msg=$msg");
+            } elseif ($_SESSION['username'] == 'Compania') {
+                $msg = "Sesión iniciada correctamente";
+                header("Location: ../views/compania_aerea.php?msg=$msg");
+            
             }else{}
             ;
         } else {
