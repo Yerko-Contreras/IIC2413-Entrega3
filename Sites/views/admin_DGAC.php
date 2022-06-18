@@ -22,11 +22,6 @@
     </tr>
   
       <?php
-          echo "<tr>";
-          echo "<td>" . $row['id'] . "</td>";
-          echo "<td>" . $row['name'] . "</td>";
-          echo "<td>" . $row['price'] . "</td>";
-          echo "</tr>";
         // echo $resultado;
         foreach ($resultado as $p) {
           echo "<tr>";
