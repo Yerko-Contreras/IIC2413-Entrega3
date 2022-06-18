@@ -27,12 +27,18 @@
             $_SESSION['username'] = $data[1];
             $_SESSION['password'] = $data[2];
             $_SESSION['tipo'] = $data[3];
-            if ($_SESSION['tipo'] = 'Pasajero') {
-                header("Location: ../pasajeros.php");
-            } else {
-            $msg = "Sesión iniciada correctamente";
-            header("Location: ../index.php?msg=$msg");
-            };
+            if ($_SESSION['tipo'] == 'Pasajero') {
+                $msg = "Sesión iniciada correctamente";
+                header("Location: ../pasajeros.php?msg=$msg");
+            } elseif ($_SESSION['tipo'] == 'Admin DGAC') {
+                $msg = "Sesión iniciada correctamente";
+                header("Location: ../views/admin_DGAC.php?msg=$msg");
+            } elseif ($_SESSION['username'] == 'Compania') {
+                $msg = "Sesión iniciada correctamente";
+                header("Location: ../views/compania_aerea.php?msg=$msg");
+            
+            }else{}
+            ;
         } else {
             $msg = 'Login Invalido';
             header("Location: ../views/login.php?msg=$msg");
