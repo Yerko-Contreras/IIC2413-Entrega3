@@ -127,3 +127,4 @@ session_start();
 }
 }
 ?>
+<?php include('templates/footer.html'); ?>

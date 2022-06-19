@@ -36,7 +36,8 @@
             <form align="center" action="views/admin_DGAC.php" method="post">
                 <input type="submit" value="Propuestas de Vuelo" class="button is-info">
             </form>
-
+            <br>
+            <br>
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión" class="button is-danger">
             </form>
@@ -46,7 +47,8 @@
             <form align="center" action="views/compania_aerea.php" method="post">
                 <input type="submit" value="Mis Vuelos" class="button is-info">
             </form>
-            
+            <br>
+            <br>
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión" class="button is-danger">
             </form>
@@ -57,7 +59,8 @@
             <form align="center" action="pasajeros.php" method="post">
                 <input type="submit" value="Reservas" class="button is-info">
             </form>
-
+            <br>
+            <br>
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión" class="button is-danger">
             </form>
