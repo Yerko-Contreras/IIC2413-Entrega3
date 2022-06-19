@@ -46,7 +46,7 @@
 <br>
 <br>
 <h3 align="center">Vuelos Rechazados</h3>
-  <table align="center">
+  <table align="center" class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light">
     <tr>
       <th>ID</th>
       <th>Codigo Vuelo</th>
