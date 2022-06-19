@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include("Sites/templates/header.html");   ?>
 
 <body>
 <?php
@@ -46,7 +46,7 @@
 <br>
 <br>
 <h3 align="center">Vuelos Rechazados</h3>
-  <table align="center" class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light">
+  <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light" align="center" >
     <tr>
       <th>ID</th>
       <th>Codigo Vuelo</th>

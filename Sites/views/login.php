@@ -3,7 +3,7 @@
 	$msg = $_GET['msg']
 ?>
 <?php
-    include("../templates/header.html");
+    include("Sites/templates/header.html");
 ?>
 
 
