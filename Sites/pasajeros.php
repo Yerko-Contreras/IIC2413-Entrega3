@@ -9,11 +9,6 @@ function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte)
     $data = $result -> fetchAll();
 };
 
-function ingresar_pasaporte($codigo, $pasaporte){
-    echo "hola";
-    header('Location: views/reservar.php');
-};
-
 session_start();
 
     if($_SESSION['tipo']){
