@@ -8,16 +8,14 @@ function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte)
 };
 
 function ingresar_pasaporte($codigo, $pasaporte){
-    echo "<input type='text' id=x'pasaporte_1' />
-        <input type='text' id='pasaporte_2' />
-        <input type='text' id='pasaporte_3' />
-        <button onclick='reservar($codigo, document.getElementById(pasaporte_1), document.getElementById(pasaporte_2), document.getElementById(pasaporte_3), $pasaporte) />";
+    echo "hola";
+    header('views/reservar.php');
 };
 
 session_start();
 
     if($_SESSION['tipo']){
-    require("config/conection.php");
+    require("Location: config/conection.php");
     
     $pasaporte = $_SESSION['username'];
     $query = "SELECT nombre
