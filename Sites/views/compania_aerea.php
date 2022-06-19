@@ -4,9 +4,8 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
-  $username = $_GET['username'];
-  $contrasena = $_GET['contrasena'];
-
+  $username = $_POST['username'];
+  $password = $_POST['password'];
   #Se construye la consulta como un string
   $query = "SELECT * FROM vuelo where estado = 'aprobado' AND codigo_compania = '$username'";
 

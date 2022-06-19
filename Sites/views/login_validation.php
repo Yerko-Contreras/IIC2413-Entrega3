@@ -34,7 +34,6 @@
                 $msg = "Sesión iniciada correctamente";
                 header("Location: ../views/admin_DGAC.php?msg=$msg");
             } elseif ($_SESSION['tipo'] == 'Compania Aerea') {
-                $msg = "Sesión iniciada correctamente";
                 header("Location: ../views/compania_aerea.php?msg=$msg");
             
             }else{}
@@ -45,3 +44,9 @@
         };
     };
 ?>
+
+<form action= "../views/compania_aerea.php" method="post">
+  <input type="hidden" id="username" name="username" value="<?php $_SESSION['username']?>">
+  <input type="hidden" id="password" name="password" value="<?php $_SESSION['password']?>">
+
+</form>
