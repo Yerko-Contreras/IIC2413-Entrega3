@@ -11,13 +11,13 @@ function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte)
 
 function ingresar_pasaporte($codigo, $pasaporte){
     echo "hola";
-    header('views/reservar.php');
+    header('Location: views/reservar.php');
 };
 
 session_start();
 
     if($_SESSION['tipo']){
-    require("Location: config/conection.php");
+    require("config/conection.php");
     
     $pasaporte = $_SESSION['username'];
     $query = "SELECT nombre
