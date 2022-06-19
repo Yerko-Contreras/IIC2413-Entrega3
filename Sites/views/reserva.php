@@ -18,6 +18,7 @@
         } else {
             $pasaporte_3 = '';
         };
+        $pasaporte = $_SESSION['username'];
         $query = "SELECT * FROM crear_reserva('$codigo_vuelo', '$pasaporte_1', '$pasaporte_2', '$pasaporte_3', '$pasaporte');";
         $result = $db -> prepare($query);
         $result -> execute();
