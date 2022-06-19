@@ -4,9 +4,11 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
+  $username = $_POST['username'];
+  $contrasena = $_POST['contrasena'];
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM vuelo where estado = 'aprobado'";
+  $query = "SELECT * FROM vuelo where estado = 'aprobado' AND codigo_compania = ";
 
   $result = $db -> prepare($query);
 	$result -> execute();
@@ -33,6 +35,7 @@
       <?php
         // echo $resultado;
         foreach ($resultado as $p) {
+          echo "$username";
           echo "<tr><td>$p[0]</td><td>$p[4]</td><td>$p[1]</td><td>$p[2]</td><td>$p[7]</td><td>$p[8]</td></tr>";
 
       }

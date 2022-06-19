@@ -33,7 +33,7 @@
             } elseif ($_SESSION['tipo'] == 'Admin DGAC') {
                 $msg = "Sesión iniciada correctamente";
                 header("Location: ../views/admin_DGAC.php?msg=$msg");
-            } elseif ($_SESSION['username'] == 'Compania') {
+            } elseif ($_SESSION['tipo'] == 'Compania Aerea') {
                 $msg = "Sesión iniciada correctamente";
                 header("Location: ../views/compania_aerea.php?msg=$msg");
             
