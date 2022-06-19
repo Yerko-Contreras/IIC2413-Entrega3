@@ -10,18 +10,25 @@
   $username = $_GET['username'];
 
   #Se construye la consulta como un string
-  $query = "SELECT vuelo.vuelo_id, vuelo.codigo_vuelo, aerodromo1.nombre, aerodromo2.nombre, vuelo.fecha_salida, vuelo.fecha_llegada FROM vuelo, aerodromo as aerodromo1, aerodromo as aerodromo2 where vuelo.estado = 'aceptado' AND vuelo.codigo_compania = '$username' AND vuelo.aerodromo_salida_id = aerodromo1.aerodromo_id AND vuelo.aerodromo_llegada_id = aerodromo2.aerodromo_id";
+  $query = "SELECT vuelo.vuelo_id, vuelo.codigo_vuelo, aerodromo1.nombre, aerodromo2.nombre, vuelo.fecha_salida, vuelo.fecha_llegada FROM vuelo, aerodromo as aerodromo1, aerodromo as aerodromo2 where vuelo.estado = 'aceptado' AND vuelo.codigo_compania = '$username' AND vuelo.aerodromo_salida_id = aerodromo1.aerodromo_id AND vuelo.aerodromo_llegada_id = aerodromo2.aerodromo_id;";
 
   $result = $db -> prepare($query);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
-  $query1 = "SELECT vuelo.vuelo_id, vuelo.codigo_vuelo, aerodromo1.nombre, aerodromo2.nombre, vuelo.fecha_salida, vuelo.fecha_llegada FROM vuelo, aerodromo as aerodromo1, aerodromo as aerodromo2 where vuelo.estado = 'rechazado' AND vuelo.codigo_compania = '$username' AND vuelo.aerodromo_salida_id = aerodromo1.aerodromo_id AND vuelo.aerodromo_llegada_id = aerodromo2.aerodromo_id";
+  $query1 = "SELECT vuelo.vuelo_id, vuelo.codigo_vuelo, aerodromo1.nombre, aerodromo2.nombre, vuelo.fecha_salida, vuelo.fecha_llegada FROM vuelo, aerodromo as aerodromo1, aerodromo as aerodromo2 where vuelo.estado = 'rechazado' AND vuelo.codigo_compania = '$username' AND vuelo.aerodromo_salida_id = aerodromo1.aerodromo_id AND vuelo.aerodromo_llegada_id = aerodromo2.aerodromo_id;";
 
   $result1 = $db -> prepare($query1);
 	$result1 -> execute();
 	$resultado1 = $result1 -> fetchAll();
+
+  $query2 = "SELECT nombre_compania FROM COMPANIA WHERE codigo_compania='$username';";
+  $result2 = $db -> prepare($query2);
+	$result2 -> execute();
+	$nombre_aerolinea = $result2 -> fetchAll();
   ?>
 
+
+<h3 class="title is-1 has-text-weight-bold has-text-centered">"Bienvenida Aerolinea: <?php echo "$nombre_aerolinea"?> </h3>
 <h3 class="title is-2 has-text-weight-bold has-text-centered">Vuelos Aprobados</h3>
   <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light" align="center" >
     <tr>
