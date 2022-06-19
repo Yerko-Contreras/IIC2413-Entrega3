@@ -1,7 +1,8 @@
 <?php session_start();
     if (isset($_SESSION['username'])){
         echo "Bienvenido/a: ";
-        echo $_SESSION['username'];
+        echo $_SESSION['username'];            
+
     }
 ?>
 
@@ -33,18 +34,17 @@
         </form>
 
     <?php } else { ?>
-
+        $_SESSION['password'] 
+        $_SESSION['tipo'] 
         <?php
-        if ($_SESSION['username'] == "DGAC" && $_SESSION['password']== "admin"){
+        if ($_SESSION['tipo'] == "Admin DGAC" ){
         ?>
-
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión">
             </form>
         <?php
-        } elseif ($_SESSION['username'] == "Compania Aerea" && $_SESSION['password']== "vuelo"){
+        } elseif ($_SESSION['tipo'] == "Compania Aerea"){
         ?>
-
 
             <form align="center" action="views/logout.php" method="post">
                 <input type="submit" value="Cerrar sesión">
