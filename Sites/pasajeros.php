@@ -1,14 +1,6 @@
 
 
 <?php 
-function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte){
-    require("config/conection.php");
-    $query = "SELECT * FROM crear_reserva('$codigo', '$pasaporte_1', '$pasaporte_2', '$pasaporte_3', '$pasaporte');";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $data = $result -> fetchAll();
-};
-
 session_start();
 
     if($_SESSION['tipo']){
