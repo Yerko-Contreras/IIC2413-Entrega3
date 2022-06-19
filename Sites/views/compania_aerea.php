@@ -28,7 +28,7 @@
   ?>
 
 
-<h3 class="title is-1 has-text-weight-bold has-text-centered">"Bienvenida Aerolinea: <?php echo "$nombre_aerolinea"?> </h3>
+<h3 class="title is-1 has-text-weight-bold has-text-centered">"Bienvenida Aerolinea: <?php echo "$nombre_aerolinea[0]"?> </h3>
 <h3 class="title is-2 has-text-weight-bold has-text-centered">Vuelos Aprobados</h3>
   <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light" align="center" >
     <tr>
