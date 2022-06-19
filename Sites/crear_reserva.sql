@@ -140,9 +140,9 @@ BEGIN
 
             IF hay_pasaporte_1 THEN
                 INSERT INTO reserva (
-                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
+                    reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
+                    n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 ); 
 
                 INSERT INTO ticket (
@@ -157,9 +157,9 @@ BEGIN
 
             IF hay_pasaporte_2 THEN
                 INSERT INTO reserva (
-                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
+                    reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
+                    n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
 
                 INSERT INTO ticket (
@@ -174,9 +174,9 @@ BEGIN
 
             IF hay_pasaporte_3 THEN
                 INSERT INTO reserva (
-                    reserva_id, codigo_reserva, numero_ticket, pasaporte_comprador
+                    reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
-                    n_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
+                    n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
 
                 INSERT INTO ticket (
