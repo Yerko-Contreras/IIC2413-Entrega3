@@ -139,51 +139,57 @@ BEGIN
 
 
             IF hay_pasaporte_1 THEN
+            
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_1
+                );
+
                 INSERT INTO reserva (
                     reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
                     n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 ); 
 
-                INSERT INTO ticket (
-                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
-                ) VALUES (
-                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_1
-                );
                 index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
 
             IF hay_pasaporte_2 THEN
+                
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_2
+                );
+
                 INSERT INTO reserva (
                     reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
                     n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
 
-                INSERT INTO ticket (
-                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
-                ) VALUES (
-                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_2
-                );
                 index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
 
             IF hay_pasaporte_3 THEN
+            
+                INSERT INTO ticket (
+                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
+                ) VALUES (
+                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_3
+                );
+                
                 INSERT INTO reserva (
                     reserva_id, reserva_index, codigo_reserva, numero_ticket, pasaporte_comprador
                 ) VALUES (
                     n_reserva, index_reserva, CONCAT(codigo, '-', n_reserva), n_ticket, pasaporte_com
                 );
 
-                INSERT INTO ticket (
-                    numero_ticket, numero_asiento, clase, comida_y_maleta, vuelo_id, pasaporte_pasajero
-                ) VALUES (
-                    n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_3
-                );
                 index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
