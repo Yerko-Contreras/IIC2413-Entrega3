@@ -121,7 +121,10 @@ session_start();
             <td>$d[1]</td>
             <td>$d[2]</td>
             <td>$d[3]</td>
-            <td><button onclick=ingresar_pasaporte($d[0], $pasaporte)></td> 
+            <td><form action='views/reserva.php' method='post'>
+            <input type='hidden' name='codigo_vuelo' value=$d[0]>
+            <input type='submit' value='Reservar'>
+            </form></td> 
             </tr>";
     };}
     include('templates/footer.html');
