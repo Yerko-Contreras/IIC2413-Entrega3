@@ -24,10 +24,10 @@
         $result = $db -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
-        if ($data[0] == "Tickets reservados correctamente") {
+        if ($data[0][0] == "Tickets reservados correctamente") {
             echo "Pasajes Reservados";
         } else {
-            echo $data[0];
+            echo $data[0][0];
         }
     }
     ?>
