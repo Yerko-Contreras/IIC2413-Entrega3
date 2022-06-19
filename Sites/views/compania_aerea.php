@@ -2,7 +2,13 @@
     include("../templates/header.html");
 ?>
 
+<?php session_start();
+    if (isset($_SESSION['username'])){
+        echo "Bienvenido/a: ";
+        echo $_SESSION['username'];            
 
+    }
+?>
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
