@@ -7,12 +7,12 @@
   $username = $_GET['username'];
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM vuelo where estado = 'aprobado' AND codigo_compania = '$username'";
+  $query = "SELECT * FROM vuelo where estado = 'aceptado' AND codigo_compania = '$username'";
 
   $result = $db -> prepare($query);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
-  $query1 = "SELECT * FROM vuelo where estado = 'rechazado'";
+  $query1 = "SELECT * FROM vuelo where estado = 'rechazado' AND codigo_compania = '$username'";
 
   $result1 = $db -> prepare($query1);
 	$result1 -> execute();
