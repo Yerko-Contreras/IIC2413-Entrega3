@@ -20,13 +20,8 @@
     <?php
         if (!isset($_SESSION['username'])) {
     ?>
-    
-    <?php require("config/conection.php");
-        ?>
-
-
         <form action="importar_usuarios.php" method="post" align="center" width="350">
-            <input type="submit" value="Importar Usuarios" class="button is-info cen" width="350">
+            <input type="submit" value="Importar Usuarios" class="button is-info" width="350">
         </form>
         <br>
         <form align="center" action="views/login.php" method="get">
@@ -34,36 +29,48 @@
         </form>
 
     <?php } else { ?>
-        $_SESSION['password'] 
-        $_SESSION['tipo'] 
+
         <?php
         if ($_SESSION['tipo'] == "Admin DGAC" ){
         ?>
+            <form align="center" action="views/admin_DGAC.php" method="post">
+                <input type="submit" value="Propuestas de Vuelo" class="button is-info">
+            </form>
+            <br>
+            <br>
             <form align="center" action="views/logout.php" method="post">
-                <input type="submit" value="Cerrar sesión">
+                <input type="submit" value="Cerrar sesión" class="button is-danger">
             </form>
         <?php
         } elseif ($_SESSION['tipo'] == "Compania Aerea"){
         ?>
-
+            <form align="center" action="views/compania_aerea.php" method="post">
+                <input type="submit" value="Mis Vuelos" class="button is-info">
+            </form>
+            <br>
+            <br>
             <form align="center" action="views/logout.php" method="post">
-                <input type="submit" value="Cerrar sesión">
+                <input type="submit" value="Cerrar sesión" class="button is-danger">
             </form>
 
-            <!--<form align="center" action="consultas/crear_pelea_pokemon.php" method="post">
-                <input type="text" name="pid1">
-                <input type="text" name="pid2">
-                <input type="submit" value="Crear pelea">
-            </form>-->
-            <?php } else { ?>
-                <form align="center" action="views/logout.php" method="post">
-                <input type="submit" value="Cerrar sesión">
-                </form>
-                <form align="center" action="consultas/crear_pelea_pokemon.php" method="post">
-                <input type="text" name="pid1">
-                <input type="text" name="pid2">
-                <input type="submit" value="Crear pelea">
+        <?php
+        } elseif ($_SESSION['tipo'] == "Pasajero"){
+        ?> 
+            <form align="center" action="pasajeros.php" method="post">
+                <input type="submit" value="Reservas" class="button is-info">
             </form>
+            <br>
+            <br>
+            <form align="center" action="views/logout.php" method="post">
+                <input type="submit" value="Cerrar sesión" class="button is-danger">
+            </form>
+
+        <?php } else { 
+        ?>
+            <form align="center" action="views/logout.php" method="post">
+                <input type="submit" value="Cerrar sesión" class="button is-danger">
+            </form>
+
     <?php } }?>
     
 </body>

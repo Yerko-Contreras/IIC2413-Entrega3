@@ -1,3 +1,5 @@
+
+
 <?php 
 function reservar($codigo, $pasaporte_1, $pasaporte_2, $pasaporte_3, $pasaporte){
     require("config/conection.php");
@@ -122,6 +124,8 @@ session_start();
             <td><button onclick=ingresar_pasaporte($d[0], $pasaporte)></td> 
             </tr>";
     };}
+    include('templates/footer.html');
 }
 }
 ?>
+
