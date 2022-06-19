@@ -13,12 +13,6 @@
     <br>
 	<br>
 
-    <?php
-    if ($msg != "")
-    { 
-        echo "<h3 class='notification is-danger is-light' align='center'>" . $msg . "</h3>";
-    }
-    ?>
 
     <form class="form-signin" role="form" action="login_validation.php" method="post">
 

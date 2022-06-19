@@ -1,4 +1,7 @@
-<?php include("Sites/templates/header.html");   ?>
+<?php
+    include("../templates/header.html");
+?>
+
 
 <body>
 <?php
@@ -20,7 +23,7 @@
   ?>
 
 <h3 align="center">Vuelos Aprobados</h3>
-  <table align="center">
+  <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light" align="center" >
     <tr>
       <th>ID</th>
       <th>Codigo Vuelo</th>
