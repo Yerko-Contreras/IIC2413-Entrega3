@@ -2,6 +2,7 @@
     <?php
     $codigo_vuelo = $_POST['codigo_vuelo'];
     require("../config/conection.php");
+    session_start();
     if (isset($_POST['pasaporte_1']) || isset($_POST['pasaporte_2']) || isset($_POST['pasaporte_3'])){
         if (isset($_POST['pasaporte_1'])){
             $pasaporte_1 = $_POST['pasaporte_1'];
