@@ -44,4 +44,7 @@
     ?>
     <input type='submit' value="Reservar">
 </form>
+<?php 
+include('templates/footer.html');
+?>
 </boody>
