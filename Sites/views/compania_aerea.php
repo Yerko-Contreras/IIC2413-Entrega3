@@ -1,19 +1,16 @@
+<?php session_start();
+?>
+
+
 <?php
     include("../templates/header.html");
 ?>
 
-<?php session_start();
-    if (isset($_SESSION['username'])){
-        echo "Bienvenido/a: ";
-        echo $_SESSION['username'];            
-
-    }
-?>
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
-  $username = $_GET['username'];
+  $username = $_SESSION['username'];
      
   #Se construye la consulta como un string
   $query = "SELECT vuelo.vuelo_id, vuelo.codigo_vuelo, aerodromo1.nombre, aerodromo2.nombre, vuelo.fecha_salida, vuelo.fecha_llegada FROM vuelo, aerodromo as aerodromo1, aerodromo as aerodromo2 where vuelo.estado = 'aceptado' AND vuelo.codigo_compania = '$username' AND vuelo.aerodromo_salida_id = aerodromo1.aerodromo_id AND vuelo.aerodromo_llegada_id = aerodromo2.aerodromo_id;";
@@ -35,7 +32,6 @@
 
 
 <h3 class="title is-1 has-text-weight-bold has-text-centered">"Bienvenida Aerolinea: <?php foreach ($nombre_aerolinea as $p) {echo "$p[0]";}?>" </h3>
-<h3 class="title is-1 has-text-weight-bold has-text-centered">"Bienvenida Aerolinea: <?php echo $_SESSION['username']?>" </h3>
 <h3 class="title is-2 has-text-weight-bold has-text-centered">Vuelos Aprobados</h3>
   <table class = "table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light" align="center" >
     <tr>
