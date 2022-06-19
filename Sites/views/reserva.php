@@ -1,6 +1,6 @@
 <boody>
     <?php
-    require("config/conection.php");
+    require("../config/conection.php");
     $pasaporte_1 = $_POST['pasaporte_1'];
     $pasaporte_1 = $_POST['pasaporte_2'];
     $pasaporte_1 = $_POST['pasaporte_3'];
