@@ -20,6 +20,7 @@ DECLARE
     n_asiento integer;
     vuelo_id_codigo integer;
     error integer;
+    index_reserva integer;
 
 BEGIN
 
@@ -111,6 +112,15 @@ BEGIN
                 FROM reserva
             );
 
+            SELECT reserva_index into index_reserva
+            FROM reserva
+            WHERE reserva.reserva_index >= ALL(
+                SELECT reserva_index
+                FROM reserva
+            );
+
+            index_reserva = index_reserva + 1;
+
             n_reserva = n_reserva + 1;
 
             IF n_reserva <= 9999 THEN
@@ -140,7 +150,7 @@ BEGIN
                 ) VALUES (
                     n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_1
                 );
-
+                index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
@@ -157,7 +167,7 @@ BEGIN
                 ) VALUES (
                     n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_2
                 );
-
+                index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
@@ -174,7 +184,7 @@ BEGIN
                 ) VALUES (
                     n_ticket, n_asiento, 'Economica', 'Verdadero', vuelo_id_codigo, pasaporte_3
                 );
-                
+                index_reserva = index_reserva + 1;
                 n_ticket = n_ticket + 1;
                 n_asiento = n_asiento + 1;
             END IF;
