@@ -17,7 +17,7 @@
         }
     }
     ?>
-<form action='reserva.php'>
+<form action='reserva.php' method="Post">
 
     Pasaporte 1: <input type='text' name='pasaporte_1'>
     <br>
