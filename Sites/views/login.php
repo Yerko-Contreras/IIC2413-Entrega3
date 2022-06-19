@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	$msg = $_GET['msg']
 ?>
+
 <?php
-    include("Sites/templates/header.html");
+    include("../templates/header.html");
 ?>
 
 
@@ -35,7 +35,5 @@
         <button  type="submit" name="login" class="button is-info is-fullwidth"> Iniciar sesión </button>
         
     </form>
-
-    
-
 </body>
+<?php include('../templates/footer.html'); ?>
