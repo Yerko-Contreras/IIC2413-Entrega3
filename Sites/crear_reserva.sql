@@ -89,7 +89,7 @@ BEGIN
         (vuelo_a_reservar.fecha_salida BETWEEN vuelo.fecha_salida AND vuelo.fecha_llegada OR
         vuelo_a_reservar.fecha_llegada BETWEEN vuelo.fecha_salida AND vuelo.fecha_llegada);
 
-        IF vuelos_reservados IS NOT NULL THEN
+        IF NOT(vuelos_reservados IS NULL) THEN
             RETURN'Uno de los usuarios tiene un vuelo en las fechas programadas';
             error = 1;
         END IF;
