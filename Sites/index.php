@@ -20,7 +20,7 @@
     <?php
         if (!isset($_SESSION['username'])) {
     ?>
-        <form action="importar_usuarios.php" method="post" align="center" width="350">
+        <form action="views/importar_usuarios.php" method="post" align="center" width="350">
             <input type="submit" value="Importar Usuarios" class="button is-info" width="350">
         </form>
         <br>
@@ -56,7 +56,7 @@
         <?php
         } elseif ($_SESSION['tipo'] == "Pasajero"){
         ?> 
-            <form align="center" action="pasajeros.php" method="post">
+            <form align="center" action="views/pasajeros.php" method="post">
                 <input type="submit" value="Reservas" class="button is-info">
             </form>
             <br>
