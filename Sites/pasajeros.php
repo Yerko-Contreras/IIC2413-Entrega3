@@ -16,9 +16,9 @@ session_start();
     $informacion_usuario = $result -> fetchAll();
     $informacion_usuario = $informacion_usuario[0];
 
-    $query = "SELECT reserva.codigo_reserva, ticket.numero_ticket, ticket.clase, vuelo.pasaporte_pasajero, vuelo.codigo_vuelo
+    $query = "SELECT reserva.codigo_reserva, ticket.numero_ticket, ticket.clase, ticket.pasaporte_pasajero, vuelo.codigo_vuelo
         FROM reserva, ticket, vuelo
-        WHERE pasaporte_comprador = '$pasaporte' AND
+        WHERE reserva.pasaporte_comprador = '$pasaporte' AND
         reserva.numero_ticket = ticket.numero_ticket AND
         vuelo.vuelo_id = ticket.vuelo_id;";
     $result = $db -> prepare($query);
@@ -126,7 +126,7 @@ session_start();
             </tr>";
     };
     echo "</table>";}
+    }
     include('templates/footer.html');
-}
-}
+    }
 ?>
