@@ -54,8 +54,8 @@ session_start();
         echo "<tr>
         <td> $d[0] </td>
         <td> $d[1] </td> </tr>";
-        echo "</table>";
     }
+    echo "</table>";
     ?>
     
     <br>
