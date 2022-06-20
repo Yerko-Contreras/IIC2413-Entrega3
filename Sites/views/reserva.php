@@ -1,5 +1,6 @@
 <boody>
     <?php
+    include("../templates/header.html");
     $codigo_vuelo = $_POST['codigo_vuelo'];
     require("../config/conection.php");
     session_start();
@@ -47,4 +48,3 @@
 <?php 
 include('../templates/footer.html');
 ?>
-</boody>
