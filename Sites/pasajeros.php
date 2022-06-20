@@ -12,31 +12,16 @@ session_start();
         WHERE pasaporte = '$pasaporte';";
     $result = $db -> prepare($query);
     $result -> execute();
-    $data = $result -> fetchAll();
-    $data = $data[0];
+    $informacion_usuario = $result -> fetchAll();
 
-    echo "Pasaporte: $pasaporte
-        Nombre: $data[0]";
-    
     $query = "SELECT codigo_reserva, numero_ticket
         FROM Reserva
         WHERE pasaporte_comprador = '$pasaporte';";
     $result = $db -> prepare($query);
     $result -> execute();
-    $data = $result -> fetchAll();
-
-    echo "\n Tus Reservas: \n";
-    echo "<table id='vuelos_reservados'>
-        <tr>
-            <th> Codigo de Reserva </th>
-            <th> Número de Ticket </th>
-        </tr>";
+    $reservas = $result -> fetchAll();
     
-        foreach ($data as $d){
-        echo "<tr>
-        <td> $d[0] </td>
-        <td> $d[1] </td> </tr>";
-    }
+    
 
     $query = "SELECT DISTINCT Aerodromos.nombre_ciudad
         FROM Propuestas, Informacion_de_vuelo, aerodromos
@@ -53,10 +38,26 @@ session_start();
     $result = $db2 -> prepare($query);
     $result -> execute();
     $data_llegada = $result -> fetchAll();
+    
+    echo "Pasaporte: $pasaporte
+    Nombre: $informacion_usuario[0]";
+
+    echo "\n Tus Reservas: \n";
+    echo "<table id='vuelos_reservados'>
+        <tr>
+            <th> Codigo de Reserva </th>
+            <th> Número de Ticket </th>
+        </tr>";
+    
+        foreach ($reservas as $d){
+        echo "<tr>
+        <td> $d[0] </td>
+        <td> $d[1] </td> </tr>";
+    }
     ?>
     
     <br>
-
+        
     <form method="post">
         Ciudad de origen: <select name="ciudad_de_origen">
             <?php foreach ($data_salida as $d){
