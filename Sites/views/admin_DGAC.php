@@ -40,7 +40,7 @@
         // echo $resultado;
         foreach ($resultado as $p) {
           echo "<tr>";
-          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td><td>$p[12]</td><td>$p[13]</td><td>$p[14]</td><td>$p[15]</td><td>$p[16]</td>";
+          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td><td>$p[12]</td><td>$p[13]</td><td>$p[14]</td><td>$p[15]</td>";
           echo "<td><input type='button' name='Button1' value='ACEPTAR'></td>";
 
           echo "<td><input type='button' name='buysell' value='RECHAZAR'></td>";
