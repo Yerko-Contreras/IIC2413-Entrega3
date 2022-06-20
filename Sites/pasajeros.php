@@ -15,9 +15,11 @@ session_start();
     $informacion_usuario = $result -> fetchAll();
     $informacion_usuario = $informacion_usuario[0];
 
-    $query = "SELECT codigo_reserva, numero_ticket
-        FROM Reserva
-        WHERE pasaporte_comprador = '$pasaporte';";
+    $query = "SELECT reserva.codigo_reserva, ticket.numero_ticket, ticket.clase, vuelo.pasaporte_pasajero, vuelo.codigo_vuelo
+        FROM reserva, ticket, vuelo
+        WHERE pasaporte_comprador = '$pasaporte' AND
+        reserva.numero_ticket = ticket.numero_ticket AND
+        vuelo.vuelo_id = ticket.vuelo_id;";
     $result = $db -> prepare($query);
     $result -> execute();
     $reservas = $result -> fetchAll();
@@ -40,14 +42,17 @@ session_start();
     $result -> execute();
     $data_llegada = $result -> fetchAll();
     
-    echo "Pasaporte: $pasaporte
-    Nombre: $informacion_usuario[0]";
+    echo "<h1 class='title is-1 has-text-weight-bold has-text-centered'>Pasaporte: $pasaporte </h1>
+    <h1 class='title is-1 has-text-weight-bold has-text-centered'>Nombre: $informacion_usuario[0]</h1>";
 
-    echo "Tus Reservas:";
-    echo "<table id='vuelos_reservados'>
+    echo "<h1 class='title is-1 has-text-weight-bold has-text-centered'>Tus Reservas:</h1>";
+    echo "<table id='vuelos_reservados' class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align='center'>
         <tr>
             <th> Codigo de Reserva </th>
             <th> Número de Ticket </th>
+            <th> Clase </th>
+            <th> Pasaporte Pasajero </th>
+            <th> Código de Vuelo </th>
         </tr>";
     
         foreach ($reservas as $d){
@@ -95,8 +100,7 @@ session_start();
     $data = $result -> fetchAll();
 
     if (!(empty($data))) {
-        echo "hola";
-    echo "<table id='Vuelos'>
+    echo "<table id='Vuelos' class = 'table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align='center'>
         <tr>
             <th> Código de Vuelo </th>
             <th> Código de Aeronave </th>
