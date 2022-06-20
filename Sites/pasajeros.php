@@ -1,4 +1,4 @@
-
+<body>
 
 <?php 
 session_start();
@@ -30,12 +30,12 @@ session_start();
         <tr>
             <th> Codigo de Reserva </th>
             <th> Número de Ticket </th>
-        <tr>";
+        </tr>";
     
         foreach ($data as $d){
         echo "<tr>
         <td> $d[0] </td>
-        <td> $d[1] </td>";
+        <td> $d[1] </td> </tr>";
     }
 
     $query = "SELECT DISTINCT Aerodromos.nombre_ciudad
@@ -119,3 +119,4 @@ session_start();
 }
 ?>
 
+</body>
