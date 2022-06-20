@@ -1,7 +1,7 @@
 <body>
 
 <?php 
-include("../templates/header.html");
+include("templates/header.html");
 session_start();
 
     if($_SESSION['tipo']){
@@ -130,4 +130,3 @@ session_start();
 }
 }
 ?>
-<?php include('../templates/footer.html'); ?>
