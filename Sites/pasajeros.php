@@ -13,6 +13,7 @@ session_start();
     $result = $db -> prepare($query);
     $result -> execute();
     $informacion_usuario = $result -> fetchAll();
+    $informacion_usuario = $informacion_usuario[0];
 
     $query = "SELECT codigo_reserva, numero_ticket
         FROM Reserva
@@ -38,7 +39,6 @@ session_start();
     $result = $db2 -> prepare($query);
     $result -> execute();
     $data_llegada = $result -> fetchAll();
-    $data_llegada = $data_llegada[0];
     
     echo "Pasaporte: $pasaporte
     Nombre: $informacion_usuario[0]";
