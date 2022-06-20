@@ -25,7 +25,7 @@
         // echo $resultado;
         foreach ($resultado as $p) {
           echo "<tr>";
-          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[6]</td><td>$p[5]</td>";
+          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td>";
           echo "<td><input type='button' name='Button1' value='buy'></td>";
 
           echo "<td><input type='button' name='buysell' value='buy'></td>";
