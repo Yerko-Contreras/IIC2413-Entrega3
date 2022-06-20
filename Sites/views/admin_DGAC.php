@@ -18,7 +18,12 @@
       <th>Aerolinea</th>
       <th>Porcentaje de Vuelos Aprobados (%)</th>
       <th>Porcentaje de Vuelos Aprobados (%)</th>
-       <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Porcentaje de Vuelos Aprobados (%)</th>
     </tr>
   
       <?php
