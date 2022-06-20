@@ -6,7 +6,7 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM aeronave ";
+  $query = "SELECT * FROM vuelo";
 
   $result = $db -> prepare($query);
 	$result -> execute();
@@ -15,15 +15,15 @@
 <h3 align="center">ADMIN</h3>
   <table align="center">
     <tr>
-      <th>Aerolinea</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
-      <th>Porcentaje de Vuelos Aprobados (%)</th>
+      <th>Vuelo ID</th>
+      <th>Codigo Vuelo</th>
+      <th>Fecha Salida</th>
+      <th>Fecha Llegada</th>
+      <th>Velocidad</th>
+      <th>Altitud</th>
+      <th>Estado</th>
+      <th>Boton 1</th>
+      <th>Boton 2</th>
     </tr>
   
       <?php
@@ -31,9 +31,9 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td>";
-          echo "<td><input type='button' name='Button1' value='buy'></td>";
+          echo "<td><input type='button' name='Button1' value='ACEPTAR'></td>";
 
-          echo "<td><input type='button' name='buysell' value='buy'></td>";
+          echo "<td><input type='button' name='buysell' value='RECHAZAR'></td>";
           
           echo "</tr>";
       }
