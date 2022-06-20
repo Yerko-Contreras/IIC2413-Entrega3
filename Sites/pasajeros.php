@@ -46,7 +46,7 @@ session_start();
     <h1 class='title is-1 has-text-weight-bold has-text-centered'>Nombre: $informacion_usuario[0]</h1>";
 
     echo "<h1 class='title is-1 has-text-weight-bold has-text-centered'>Tus Reservas:</h1>";
-    echo "<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align='center'>
+    echo "<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light'>
         <tr>
             <th> Codigo de Reserva </th>
             <th> Número de Ticket </th>
