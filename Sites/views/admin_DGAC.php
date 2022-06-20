@@ -15,25 +15,25 @@
 <h3 align="center">ADMIN</h3>
   <table align="center">
     <tr>
-      <th>Vuelo ID </th>
-      <th>Aerodromo Salida ID </th>
-      <th>Aerodromo Llegada ID </th>
-      <th>Ruta ID </th>
-      <th>Codigo Vuelo </th>
-      <th>Codigo Aeronave </th>
-      <th>Codigo Compañia </th>
-      <th>Fecha Salida </th>
-      <th>Fecha Llegada </th>
-      <th>Velocidad </th>
-      <th>Altitud </th>
-      <th>Estado </th>
-      <th>Nombre Aeronave </th>
-      <th>Modelo </th>
-      <th>Peso </th>
-      <th>Valor </th>
-      <th>Nombre Compañia </th>
-      <th>Boton 1 </th>
-      <th>Boton 2 </th>
+      <th>Vuelo ID</th>
+      <th>Aerodromo Salida ID</th>
+      <th>Aerodromo Llegada ID</th>
+      <th>Ruta ID</th>
+      <th>Codigo Vuelo</th>
+      <th>Codigo Aeronave</th>
+      <th>Codigo Compañia</th>
+      <th>Fecha Salida</th>
+      <th>Fecha Llegada</th>
+      <th>Velocidad</th>
+      <th>Altitud</th>
+      <th>Estado</th>
+      <th>Nombre Aeronave</th>
+      <th>Modelo</th>
+      <th>Peso</th>
+      <th>Valor</th>
+      <th>Nombre Compañia</th>
+      <th>Boton 1</th>
+      <th>Boton 2</th>
     </tr>
   
       <?php
