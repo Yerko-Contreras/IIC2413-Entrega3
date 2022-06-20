@@ -43,7 +43,7 @@ session_start();
     echo "Pasaporte: $pasaporte
     Nombre: $informacion_usuario[0]";
 
-    echo "\n Tus Reservas: \n";
+    echo "Tus Reservas:";
     echo "<table id='vuelos_reservados'>
         <tr>
             <th> Codigo de Reserva </th>
@@ -54,6 +54,7 @@ session_start();
         echo "<tr>
         <td> $d[0] </td>
         <td> $d[1] </td> </tr>";
+        echo "</table>";
     }
     ?>
     
@@ -115,7 +116,8 @@ session_start();
             <input type='submit' value='Reservar'>
             </form></td> 
             </tr>";
-    };}
+    };
+    echo "</table>";}
     include('templates/footer.html');
 }
 }
