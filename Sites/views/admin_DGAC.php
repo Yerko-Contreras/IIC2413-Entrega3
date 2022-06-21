@@ -6,7 +6,7 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM vuelo, informacion_de_vuelo WHERE vuelo.estado==informacion_de_vuelo.estado";
+  $query = "SELECT * FROM vuelo";
 
   $result = $db -> prepare($query);
 	$result -> execute();
