@@ -14,8 +14,9 @@
   ?>
 
   <form align="center" action=".../views/admin_DGAC.php" method="post">
-    Seleccinar Fechas:
-    Fecha Inicio/Salida:
+    Seleccionar Fechas:
+    <br>
+    <b>Fecha Inicio/Salida:</b>
     <select name="inicio">
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
@@ -25,7 +26,7 @@
       ?>
     </select>
     <br/>
-    Fecha Final/Llegada:
+    <b>Fecha Final/Llegada:</b>
     <select name="final">
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
