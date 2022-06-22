@@ -15,7 +15,7 @@
   $dataCollected = $result -> fetchAll();
   ?>
 
-  <form method="post">
+  <form align="center" method="post">
   <b>Seleccionar Fechas:</b>
     <br>
     Fecha Inicio/Salida:
@@ -23,7 +23,7 @@
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
-        echo "<option value=$d[0]>$d[0]</option>";
+        echo "<option value="$d[0]">$d[0]</option>";
       }
       ?>
     </select>
@@ -33,20 +33,20 @@
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
-        echo "<option value=$d[1]>$d[1]</option>";
+        echo "<option value="$d[1]">$d[1]</option>";
       }
       ?>
     </select>
     <br/><br/>
-    <input type="submit" value="Buscar fechas">
+    <input type='submit' value='Buscar fechas' name='fechas'>
   </form>
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
 
-  $inicio = $_POST["inicio"];
-  $final = $_POST["final"];
+  $inicio = $_POST['inicio'];
+  $final = $_POST['final'];
 
  	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$inicio' AS date) OR CAST(fecha_llegada AS date) >= CAST('$final' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
 	$result = $db -> prepare($query2);
