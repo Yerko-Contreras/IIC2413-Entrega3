@@ -50,7 +50,7 @@
  	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) OR CAST(fecha_llegada AS date) >= CAST('$inicio' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
 	$result = $db -> prepare($query2);
 	$result -> execute();
-	$vuelos = $result -> fetchAll();
+	$resultado = $result -> fetchAll();
   ?>
   <h3 align="center">Vuelos Pendientes</h3>
 	<table align="center">
