@@ -1,6 +1,7 @@
 <?php include('../templates/header.html');   ?>
 
 <body>
+<br>
 <h3 align="center"><b>ADMIN</b></h3>
 <br>
 
@@ -14,7 +15,7 @@
   $dataCollected = $result -> fetchAll();
   ?>
 
-  <form align="center" action=".../views/admin_DGAC.php" method="post">
+  <form align="center" action="" method="post">
   <b>Seleccionar Fechas:</b>
     <br>
     Fecha Inicio/Salida:
