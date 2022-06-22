@@ -15,9 +15,9 @@
   ?>
 
   <form align="center" action=".../views/admin_DGAC.php" method="post">
-    Seleccionar Fechas:
+  <b>Seleccionar Fechas:</b>
     <br>
-    <b>Fecha Inicio/Salida:</b>
+    Fecha Inicio/Salida:
     <select name="inicio">
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
@@ -27,7 +27,7 @@
       ?>
     </select>
     <br/>
-    <b>Fecha Final/Llegada:</b>
+    Fecha Final/Llegada:
     <select name="final">
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
@@ -47,7 +47,7 @@
   $inicio = $_POST["inicio"];
   $final = $_POST["final"];
 
- 	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicial' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) OR CAST(fecha_llegada AS date) >= CAST('$inicial' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
+ 	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) OR CAST(fecha_llegada AS date) >= CAST('$inicio' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
 	$result = $db -> prepare($query2);
 	$result -> execute();
 	$vuelos = $result -> fetchAll();
