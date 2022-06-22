@@ -1,10 +1,11 @@
 <?php include('../templates/header.html');   ?>
 
 <body>
-<h3 align="center">ADMIN</h3>
+<h3 align="center"><b>ADMIN</b></h3>
 <br>
 
 <h3 align="center">Filtrar por fecha las propuestas de vuelo pendiente</h3>
+<br>
   <?php
   #Primero obtenemos todos los tipos de pokemones
   require("../config/conection.php");
@@ -41,7 +42,7 @@
 
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("../config/conection.php");
 
   $inicio = $_POST["inicio"];
   $final = $_POST["final"];
