@@ -16,7 +16,6 @@
 	$result -> execute();
 	$resultado = $result -> fetchAll();
   ?>
-<h3 align="center">ADMIN</h3>
 <br>
         <table align="center">
     <tr>
@@ -30,18 +29,16 @@
       <th>Fecha Salida</th>
       <th>Fecha Llegada</th>
       <th>Velocidad</th>
-      <th> Altitud</th>
-      <th> Estado</th>
-      <th> Nombre Aeronave</th>
-      <th> Modelo</th>
+      <th>Altitud</th>
+      <th>Estado</th>
+      <th>Nombre Aeronave</th>
+      <th>Modelo</th>
     </tr>
   
       <?php
         // echo $resultado;
         foreach ($resultado as $p) {
-          echo "<tr>";
-          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td>";
-          echo "</tr>";
+          echo "</tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td></tr>";
       }
       ?>
  
@@ -50,7 +47,7 @@
 
 
 
-<h3 align="center">Filtrar por fecha las propuestas de Vuelos Pendientes</h3>
+<h3 align="center"><b>Filtrar por fecha las propuestas de Vuelos Pendientes</b></h3>
 <br>
   <?php
   #Primero obtenemos todos los tipos de pokemones
