@@ -23,7 +23,7 @@
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
-        echo "<option value="$d[0]">$d[0]</option>";
+        echo "<option value='$d[0]'>'$d[0]'</option>";
       }
       ?>
     </select>
@@ -33,7 +33,7 @@
       <?php
       #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
-        echo "<option value="$d[1]">$d[1]</option>";
+        echo "<option value=$d[1]>$d[1]</option>";
       }
       ?>
     </select>
