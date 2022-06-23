@@ -31,8 +31,6 @@
       <th>Velocidad</th>
       <th>Altitud</th>
       <th>Estado</th>
-      <th>Nombre Aeronave</th>
-      <th>Modelo</th>
     </tr>
   
       <?php
@@ -86,10 +84,10 @@
   <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
-
+ if (isset($_POST['inicio']) && isset($_POST['final'])){
   $inicio = $_POST['inicio'];
   $final = $_POST['final'];
-
+ }
  	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$inicio' AS date) OR CAST(fecha_llegada AS date) >= CAST('$final' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
 	$result = $db -> prepare($query2);
 	$result -> execute();
