@@ -17,7 +17,7 @@
 	$resultado = $result -> fetchAll();
   ?>
 <br>
-        <table align="center">
+        <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
     <tr>
       <th>Vuelo ID</th>
       <th>Aerodromo Salida ID</th>
@@ -96,7 +96,7 @@
 	$resultado = $result -> fetchAll();
   ?>
   <h3 align="center">Vuelos Pendientes</h3>
-	<table align="center">
+	<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
     <th>Vuelo ID</th>
     <th>Aerodromo Salida ID</th>
