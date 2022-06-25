@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (isset($_POST['btnDelete'])) {
     // btnDelete 
   } else {
-    echo "Funciona"
+    echo "Funciona";
     // Assume btnSubmit 
   }
 }
