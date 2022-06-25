@@ -5,6 +5,10 @@
 <h3 align="center"><b>ADMIN</b></h3>
 <br>
 
+<form class="form-signin" role="form" action="../views/propuestas_pendientes.php" method="post">
+  <button  type="submit" name="login" class="button is-info is-fullwidth"> Ver Propuestas Pendientes </button>
+</form>
+
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
@@ -17,6 +21,7 @@
 	$resultado = $result -> fetchAll();
 ?>
 
+<h3 align="center"><b>Lista de Propuestas de Vuelos</b></h3>
 <br>
 <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
@@ -37,12 +42,8 @@
       // echo $resultado;
       foreach ($resultado as $p) {
         echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td></tr>";
-      }
+    }
     ?>
-  </table>
-
-<form class="form-signin" role="form" action="../views/propuestas_pendientes.php" method="post">
-  <button  type="submit" name="login" class="button is-info is-fullwidth"> Ver Propuestas Pendientes </button>
-</form>
+</table>
 
 <?php include('../templates/footer.html'); ?>
