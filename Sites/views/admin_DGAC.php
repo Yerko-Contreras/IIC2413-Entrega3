@@ -113,14 +113,14 @@
   </tr>
     <?php
       // echo $resultado;
-      foreach ($resultado as $p) {?>
+      foreach ($resultado as $p) {
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[10]</td><td>$p[11]</td>";
         if ($p[11] == "pendiente") {
-          <form action="admin_DGAC.php" method="post" align="center" width="350">
-            <input type="submit"  class="button is-info" value="insert" onclick="insert()">
-          </form>}
-          <?php
+          
+          echo '<td><input type="submit"  class="button is-info" value="insert" onclick="insert()"></td><td><input type="submit"  class="button is-info" value="insert" onclick="select()"></td>';
+        }
+          
     }}
     ?>
 </table>
