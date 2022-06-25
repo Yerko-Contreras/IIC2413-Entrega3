@@ -17,7 +17,7 @@
 	$resultado = $result -> fetchAll();
   ?>
 <br>
-
+<h3 align="center"><b>Lista de Vuelos Pendientes</b></h3>
   <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
     <tr>
       <th>Propuesta vuelo ID</th>
@@ -37,7 +37,11 @@
       <?php
         // echo $resultado;
         foreach ($resultado as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td></tr>";
+          echo "<tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
+          echo "<td><input type='button' name='buysell'  value='insert' onclick='select()'></td>";
+          echo "<td><input type='button' name='buysell'  value='insert' onclick='insert()'></td>";
+          echo "</tr>";
       }
       ?>
   </table>
