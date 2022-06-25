@@ -12,7 +12,7 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM vuelo";
+  $query = "SELECT * FROM informacion_de_vuelo;";
 
   $result = $db2 -> prepare($query);
 	$result -> execute();
