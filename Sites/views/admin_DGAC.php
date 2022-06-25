@@ -117,12 +117,24 @@
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td>";
         if ($p[11] == "pendiente") {
-          echo "<td><input type='button' name='Button1' value='Aceptar'></td>";
-          echo "<td><input type='button' name='Button2' value='Rechazar'></td>";}
+          echo '<input type="submit" name="btnSubmit" value="Save Changes">';
+          echo '<input type="submit" name="btnDelete" value="Delete">';}
         echo "</tr>";
     }}
     ?>
 </table>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Something posted
+
+  if (isset($_POST['btnDelete'])) {
+    // btnDelete 
+  } else {
+    echo "Funciona"
+    // Assume btnSubmit 
+  }
+}
+?>
 
 
 <?php include('../templates/footer.html'); ?>
