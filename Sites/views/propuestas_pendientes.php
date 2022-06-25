@@ -10,13 +10,14 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND informacion_de_vuelo.estado = 'pendiente';";
+  $query = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND informacion_de_vuelo.estado = 'pendiente';";
 
   $result = $db2 -> prepare($query);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
   ?>
 <br>
+
   <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
     <tr>
       <th>Propuesta vuelo ID</th>
@@ -29,27 +30,24 @@
       <th>Fecha de salida</th>
       <th>Fecha de llegada</th>
       <th>Tipo de vuelo</th>
-      <th>Maximo de pasajeros</th>
-      <th>¿Es realizado?</th>
       <th>Estado</th>
+      <th>Aceptar</th>
+      <th>Rechazar</th>
     </tr>
-  
       <?php
         // echo $resultado;
         foreach ($resultado as $p) {
-
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td><td>$p[11]</td><td>$p[12]</td></tr>";
       }
       ?>
- 
   </table>
+
 <?php
   if(isset($_POST['aceptar'])){
     require("../config/conection.php");
     $result = $db -> prepare("SELECT DISTINCT fecha_salida, DISTINCT fecha_llegada FROM vuelo;");
     $result -> execute();
-    $dataCollected = $result -> fetchAll();
-    
+    $dataCollected = $result -> fetchAll();   
   }
 ?>
 
