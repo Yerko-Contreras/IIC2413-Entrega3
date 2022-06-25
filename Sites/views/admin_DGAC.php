@@ -21,6 +21,8 @@
 	$resultado = $result -> fetchAll();
 ?>
 
+<br>
+<br>
 <h3 align="center"><b>Lista de Propuestas de Vuelos</b></h3>
 <br>
 <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
