@@ -134,7 +134,15 @@
 
 <?php
     function select(){
-      echo "The select function is called.";
+      require("../config/conection.php");
+      $username = $_SESSION['username'];
+         
+
+      $query2 = "SELECT nombre_compania FROM COMPANIA;";
+      $result2 = $db -> prepare($query2);
+      $result2 -> execute();
+      $nombre_aerolinea = $result2 -> fetchAll();
+      echo "#{$nombre_aerolinea} ASDDDDDDDDDDDDDDDDDDD";
   }
   function insert(){
       echo "The insert function is called.";
