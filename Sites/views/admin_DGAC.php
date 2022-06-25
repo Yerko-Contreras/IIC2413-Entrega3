@@ -14,7 +14,7 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT propuestas.id, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, informacion_de_vuelo.codigo, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.velocidad, fpl.altitud, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.fpl_propuestas = propuestas.fpl_propuestas AND propuestas.id = informacion_de_vuelo.informacion_id;";
+  $query = "SELECT propuestas.propuesta_vuelo_id, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, informacion_de_vuelo.codigo, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.velocidad, fpl.altitud, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id;";
 
   $result = $db2 -> prepare($query);
 	$result -> execute();
@@ -27,13 +27,13 @@
 <br>
 <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
-    <th>Propuesta ID</th>
-    <th>Fecha Envio Propuesta</th>
-    <th>Fecha Salida</th>
-    <th>Fecha Llegada</th>
-    <th>Codigo</th>
-    <th>Tipo Vuelo</th>
-    <th>Maximo Pasajeros</th>
+    <th>Propuesta vuelo ID</th>
+    <th>Fecha envio de propuesta</th>
+    <th>Fecha de salida</th>
+    <th>Fecha de llegada</th>
+    <th>Codigo vuelo</th>
+    <th>Tipo de vuelo</th>
+    <th>Maximo de pasajeros</th>
     <th>Velocidad</th>
     <th>Altitud</th>
     <th>¿Es realizado?</th>

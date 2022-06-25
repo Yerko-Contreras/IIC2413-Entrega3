@@ -64,3 +64,7 @@ $query3 = "UPDATE vuelo SET estado='rechazado' WHERE";
 
 
 <?php include('../templates/footer.html'); ?>
+
+
+
+"SELECT * FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.fpl_propuestas = propuestas.fpl_propuestas AND propuestas.id = informacion_de_vuelo.informacion_id;";
