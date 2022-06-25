@@ -116,9 +116,9 @@
       foreach ($resultado as $p) {
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[10]</td><td>$p[11]</td>";
-        if ($p[11] == "pendiente") {
-          
-          echo '<td><input type="button"  class="button is-info" value="insert" onclick="insert()"></td><td><input type="button"  class="button is-info" value="insert" onclick="select()"></td>';
+        if (1 == 1) {
+        
+          echo "<td><input type='button' name='buysell'  value='insert' onclick='select()'></td>";
         }
         echo "</tr>";
           
