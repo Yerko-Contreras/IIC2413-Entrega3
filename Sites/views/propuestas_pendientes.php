@@ -10,7 +10,7 @@
   require("../config/conection.php");
 
   #Se construye la consulta como un string
-  $query = "SELECT * FROM vuelo";
+  $query = "SELECT * FROM informacion_de_vuelo";
 
   $result = $db2 -> prepare($query);
 	$result -> execute();
@@ -37,21 +37,7 @@
         // echo $resultado;
         foreach ($resultado as $p) {
 
-          echo "</tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td></tr>";
-
-          echo "<td>";
-
-          ?> 
-          <form method="post">
-
-            <input type='submit' name='aceptar'  value='aceptar' > 
-          </form> 
-          
-          <?php
-          echo "</td>";
-          
-          
-          echo "</tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td></tr>";
       }
       ?>
  
