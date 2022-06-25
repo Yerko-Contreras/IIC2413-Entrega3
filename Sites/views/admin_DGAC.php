@@ -105,8 +105,6 @@
     <th>Codigo Compañia</th>
     <th>Fecha Salida</th>
     <th>Fecha Llegada</th>
-    <th>Velocidad</th>
-    <th> Altitud</th>
     <th> Estado</th>
     <th> Aceptar</th>
     <th> Rechazar</th>
