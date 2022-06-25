@@ -4,7 +4,7 @@
 <br>
 <h3 align="center"><b>ADMIN</b></h3>
 <br>
-  <form class="form-signin" role="form" action="/views/propuestas_pendientes.php" method="post">
+  <form class="form-signin" role="form" action="../views/propuestas_pendientes.php" method="post">
       <button  type="submit" name="login" class="button is-info is-fullwidth"> Ver Propuestas Pendientes </button>
   </form>
 <?php
