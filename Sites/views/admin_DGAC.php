@@ -120,6 +120,7 @@
           
           echo '<td><input type="submit"  class="button is-info" value="insert" onclick="insert()"></td><td><input type="submit"  class="button is-info" value="insert" onclick="select()"></td>';
         }
+        echo "</tr>";
           
     }}
     ?>
