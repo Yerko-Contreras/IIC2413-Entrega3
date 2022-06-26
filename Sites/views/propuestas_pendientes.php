@@ -1,5 +1,4 @@
 <?php include('../templates/header.html');   ?>
-
 <body> 
 <br>
 <h3 align="center"><b>ADMIN</b></h3>
@@ -7,10 +6,8 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conection.php");
-
   #Se construye la consulta como un string
   $query = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND informacion_de_vuelo.estado = 'pendiente';";
-
   $result = $db2 -> prepare($query);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
@@ -45,7 +42,6 @@
       }
       ?>
   </table>
-
 <?php
   if(isset($_POST['aceptar'])){
     require("../config/conection.php");
@@ -65,7 +61,6 @@
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
-
   <form align="center" method="post">
   <b>Seleccionar Fechas:</b>
     <br>
