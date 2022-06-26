@@ -38,7 +38,11 @@
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
           echo "<td><input type='button' name='buysell'  value='aceptar' onclick='select()'></td>";
           echo "<td><input type='button' name='buysell'  value='rechazar' onclick='insert()'></td>";
-          function select(){
+          echo "</tr>";
+      }
+      ?>
+<?php
+function select(){
             require("../config/conection.php");
             $username = $_SESSION['username'];
                
@@ -52,9 +56,7 @@
         function insert(){
             echo "The insert function is called.";
         }
-          echo "</tr>";
-      }
-      ?>
+        ?>
   </table>
 <?php
   if(isset($_POST['aceptar'])){
