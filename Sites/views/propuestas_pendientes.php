@@ -142,8 +142,8 @@ function select(){
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
 
-        echo "<td><input type='button' name='buysell'  value='insert' onclick='select2()'></td>";
-        echo "<td><input type='button' name='buysell'  value='insert' onclick='insert2()'></td>";
+        echo "<td><input type='button' name='buysell'  value='aceptar' onclick='select2()'></td>";
+        echo "<td><input type='button' name='buysell'  value='rechazar' onclick='insert2()'></td>";
         
         echo "</tr>";     
     }}
