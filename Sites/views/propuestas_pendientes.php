@@ -38,6 +38,20 @@
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
           echo "<td><input type='button' name='buysell'  value='aceptar' onclick='select()'></td>";
           echo "<td><input type='button' name='buysell'  value='rechazar' onclick='insert()'></td>";
+          function select(){
+            require("../config/conection.php");
+            $username = $_SESSION['username'];
+               
+      
+            $query2 = "UPDATE vuelo SET vuelo.estado='aceptado' WHERE vuelo.codigo_vuelo ='$p[2]';";
+            $result2 = $db -> prepare($query2);
+            $result2 -> execute();
+            $vuelo_estado = $result2 -> fetchAll();
+            
+        }
+        function insert(){
+            echo "The insert function is called.";
+        }
           echo "</tr>";
       }
       ?>
@@ -104,6 +118,7 @@
 	$resultado = $result -> fetchAll();
   ?>
   <h3 align="center"><b>Vuelos Pendientes</b></h3>
+  <br>
 	<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
     <th>Propuesta vuelo ID</th>
