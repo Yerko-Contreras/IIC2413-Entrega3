@@ -55,7 +55,7 @@
 <h3 align="center"><b>Filtrar por Fecha las Propuestas de Vuelos Pendientes</b></h3>
 <br>
   <?php
-  #Primero obtenemos todos los tipos de pokemones
+  #OBTENGO TODAS LAS FECHAS
   require("../config/conection.php");
   $result = $db2 -> prepare("SELECT fecha_salida DISTINCT, fecha_llegada DISTINCT FROM informacion_de_vuelo ORDER BY fecha_salida, fecha_llegada;");
   $result -> execute();
@@ -65,24 +65,28 @@
   <b>Seleccionar Fechas:</b>
     <br>
     Fecha Inicio/Salida:
+
     <select name="inicio">
       <?php
-      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      #INICIO -Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
         echo "<option value='$d[0]'>'$d[0]'</option>";
       }
       ?>
     </select>
+
     <br/>
     Fecha Final/Llegada:
+
     <select name="final">
       <?php
-      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
+      #FINAL - Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
       foreach ($dataCollected as $d) {
         echo "<option value=$d[1]>$d[1]</option>";
       }
       ?>
     </select>
+
     <br/><br/>
     <input type='submit' value='Buscar fechas' name='fechas'>
   </form>
@@ -94,7 +98,7 @@
   $inicio = $_POST['inicio'];
   $final = $_POST['final'];
 
-  $query2 = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$inicio' AS date) OR CAST(fecha_llegada AS date) >= CAST('$final' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date);";
+  $query2 = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) OR CAST(fecha_llegada AS date) >= CAST('$inicio' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date);";
 	$result = $db2 -> prepare($query2);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
