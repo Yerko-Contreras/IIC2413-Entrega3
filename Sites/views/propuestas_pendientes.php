@@ -98,44 +98,41 @@
  if (isset($_POST['inicio']) && isset($_POST['final'])){
   $inicio = $_POST['inicio'];
   $final = $_POST['final'];
- 
- 	$query2 = "SELECT * FROM vuelo WHERE CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$inicio' AS date) OR CAST(fecha_llegada AS date) >= CAST('$final' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date)";
-	$result = $db -> prepare($query2);
+
+  $query2 = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$inicio' AS date) OR CAST(fecha_llegada AS date) >= CAST('$final' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date);";
+	$result = $db2 -> prepare($query2);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
   ?>
   <h3 align="center">Vuelos Pendientes</h3>
 	<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
-    <th>Vuelo ID</th>
-    <th>Aerodromo Salida ID</th>
-    <th>Aerodromo Llegada ID</th>
-    <th>Ruta ID</th>
-    <th>Codigo Vuelo</th>
-    <th>Codigo Aeronave</th>
-    <th>Codigo Compañia</th>
-    <th>Fecha Salida</th>
-    <th>Fecha Llegada</th>
-    <th> Estado</th>
-    <th> Aceptar</th>
-    <th> Rechazar</th>
+    <th>Propuesta vuelo ID</th>
+    <th>Codigo de compañia</th>
+    <th>Codigo de vuelo</th>
+    <th>Codigo de aeronave</th>
+    <th>Aerodromo ID salida</th>
+    <th>Aerodromo ID llegada</th>
+    <th>Fecha envio de propuesta</th>
+    <th>Fecha de salida</th>
+    <th>Fecha de llegada</th>
+    <th>Tipo de vuelo</th>
+    <th>Estado</th>
+    <th>Aceptar</th>
+    <th>Rechazar</th>
   </tr>
     <?php
       // echo $resultado;
       foreach ($resultado as $p) {
         echo "<tr>";
-        echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[10]</td><td>$p[11]</td>";
+        echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[10]</td>";
 
-        
         echo "<td><input type='button' name='buysell'  value='insert' onclick='select()'></td>";
         echo "<td><input type='button' name='buysell'  value='insert' onclick='insert()'></td>";
         
-        echo "</tr>";
-          
+        echo "</tr>";     
     }}
     ?>
-
-
 </table>
 
 <?php
