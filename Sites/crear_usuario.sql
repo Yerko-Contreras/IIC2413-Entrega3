@@ -26,8 +26,7 @@ BEGIN
     
     SELECT * INTO usuario 
     FROM Usuarios 
-    WHERE username = username_nuevo AND 
-    tipo = tipo_nuevo
+    WHERE username = username_nuevo
     LIMIT(1);
 
     IF usuario IS NULL THEN
