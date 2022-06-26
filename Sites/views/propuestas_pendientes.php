@@ -36,26 +36,17 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
-          echo "<td><input type='button' name='buysell'  value='aceptar' onclick='select()'></td>";
-          echo "<td><input type='button' name='buysell'  value='rechazar' onclick='insert()'></td>";
+          echo "<form method="POST" action="prop_exec_acept.php">
+            <input type="button" name="update" value="aceptar"/>
+          </form>";
+          echo "<form method="POST" action="prop_exec_rech.php">
+            <input type="button" name="update" value="rechazar"/>
+          </form>";
           echo "</tr>";
       }
       ?>
-<?php
-function select(){
-            require("../config/conection.php");
-            $username = $_SESSION['username'];
-               
-            $query2 = "UPDATE informacion_de_vuelo SET informacion_de_vuelo.estado='aceptado' WHERE informacion_de_vuelo.codigo_vuelo ='$p[2]';";
-            $result2 = $db2 -> prepare($query2);
-            $result2 -> execute();
-            $info_estado = $result2 -> fetchAll();
-            echo "#{$info_estado} aceptado";
-        }
-        function insert(){
-            echo "The insert function is called.";
-        }
-        ?>
+
+
   </table>
 <?php
   if(isset($_POST['aceptar'])){
