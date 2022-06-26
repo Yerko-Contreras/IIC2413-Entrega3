@@ -61,7 +61,7 @@
   <?php
   #Primero obtenemos todos los tipos de pokemones
   require("../config/conection.php");
-  $result = $db2 -> prepare("SELECT fecha_salida DISTINCT, fecha_llegada DISTINCT FROM informacion_de_vuelo;");
+  $result = $db2 -> prepare("SELECT fecha_salida DISTINCT, fecha_llegada DISTINCT FROM informacion_de_vuelo ORDER BY fecha_salida, fecha_llegada;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
