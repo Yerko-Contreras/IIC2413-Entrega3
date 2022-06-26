@@ -36,7 +36,8 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
-          echo "<form method="POST" action="prop_exec_acept.php"><input type="button" name="update" value="aceptar"/></form>";
+          echo "<form method="POST" action="prop_exec_acept.php">;
+                <input type="button" name="update" value="aceptar"/></form>";
           echo "<form method="POST" action="prop_exec_rech.php"><input type="button" name="update" value="rechazar"/></form>";
           echo "</tr>";
       }
