@@ -46,12 +46,11 @@ function select(){
             require("../config/conection.php");
             $username = $_SESSION['username'];
                
-      
-            $query2 = "UPDATE vuelo SET vuelo.estado='aceptado' WHERE vuelo.codigo_vuelo ='$p[2]';";
-            $result2 = $db -> prepare($query2);
+            $query2 = "UPDATE informacion_de_vuelo SET informacion_de_vuelo.estado='aceptado' WHERE informacion_de_vuelo.codigo_vuelo ='$p[2]';";
+            $result2 = $db2 -> prepare($query2);
             $result2 -> execute();
-            $vuelo_estado = $result2 -> fetchAll();
-            echo "#{$vuelo_estado} aceptado";
+            $info_estado = $result2 -> fetchAll();
+            echo "#{$info_estado} aceptado";
         }
         function insert(){
             echo "The insert function is called.";
