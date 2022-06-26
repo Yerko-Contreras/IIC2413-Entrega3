@@ -98,7 +98,7 @@
   $inicio = $_POST['inicio'];
   $final = $_POST['final'];
 
-  $query2 = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) OR CAST(fecha_llegada AS date) >= CAST('$inicio' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date);";
+  $query2 = "SELECT propuestas.propuesta_vuelo_id, propuestas.codigo_compania, informacion_de_vuelo.codigo, informacion_de_vuelo.codigo_aeronave,informacion_de_vuelo.aerodromo_id_sal, informacion_de_vuelo.aerodromo_id_lle, propuestas.fecha_envio_propuesta, informacion_de_vuelo.fecha_salida, informacion_de_vuelo.fecha_llegada, fpl.tipo_vuelo, fpl.max_pasajeros, fpl.realizado, informacion_de_vuelo.estado FROM informacion_de_vuelo, fpl, propuestas WHERE fpl.informacion_id = propuestas.informacion_id AND propuestas.informacion_id = informacion_de_vuelo.informacion_id AND CAST(fecha_salida AS date) >= CAST('$inicio' AS date) AND CAST(fecha_salida AS date) <= CAST('$final' AS date) AND CAST(fecha_llegada AS date) >= CAST('$inicio' AS date) AND CAST(fecha_llegada AS date) <= CAST('$final' AS date);";
 	$result = $db2 -> prepare($query2);
 	$result -> execute();
 	$resultado = $result -> fetchAll();
