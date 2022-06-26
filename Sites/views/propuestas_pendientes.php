@@ -47,7 +47,7 @@
             $result2 = $db -> prepare($query2);
             $result2 -> execute();
             $vuelo_estado = $result2 -> fetchAll();
-            
+            echo "#{$vuelo_estado} aceptado";
         }
         function insert(){
             echo "The insert function is called.";
