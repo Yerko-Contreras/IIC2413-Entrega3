@@ -141,8 +141,8 @@
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
 
-        echo "<td><input type='button' name='buysell'  value='insert' onclick='select()'></td>";
-        echo "<td><input type='button' name='buysell'  value='insert' onclick='insert()'></td>";
+        echo "<td><input type='button' name='buysell'  value='insert' onclick='select2()'></td>";
+        echo "<td><input type='button' name='buysell'  value='insert' onclick='insert2()'></td>";
         
         echo "</tr>";     
     }}
@@ -150,7 +150,7 @@
 </table>
 
 <?php
-    function select(){
+    function select2(){
       require("../config/conection.php");
       $username = $_SESSION['username'];
          
@@ -161,7 +161,7 @@
       $nombre_aerolinea = $result2 -> fetchAll();
       echo "#{$nombre_aerolinea} ASDDDDDDDDDDDDDDDDDDD";
   }
-  function insert(){
+  function insert2(){
       echo "The insert function is called.";
   }
 ?>
