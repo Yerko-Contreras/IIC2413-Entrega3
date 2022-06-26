@@ -3,7 +3,6 @@
 <body> 
 <br>
 <h3 align="center"><b>ADMIN</b></h3>
-<br>
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -18,6 +17,7 @@
   ?>
 <br>
 <h3 align="center"><b>Lista de Vuelos Pendientes</b></h3>
+<br>
   <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
     <tr>
       <th>Propuesta vuelo ID</th>
@@ -55,13 +55,13 @@
   }
 ?>
 
-
-<h3 align="center"><b>Filtrar por fecha las propuestas de Vuelos Pendientes</b></h3>
+<br>
+<h3 align="center"><b>Filtrar por Fecha las Propuestas de Vuelos Pendientes</b></h3>
 <br>
   <?php
   #Primero obtenemos todos los tipos de pokemones
   require("../config/conection.php");
-  $result = $db -> prepare("SELECT DISTINCT fecha_salida, DISTINCT fecha_llegada FROM vuelo;");
+  $result = $db2 -> prepare("SELECT fecha_salida DISTINCT, fecha_llegada DISTINCT FROM informacion_de_vuelo;");
   $result -> execute();
   $dataCollected = $result -> fetchAll();
   ?>
