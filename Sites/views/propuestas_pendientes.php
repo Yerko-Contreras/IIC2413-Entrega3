@@ -36,26 +36,20 @@
         foreach ($resultado as $p) {
           echo "<tr>";
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
-          echo "<form method="POST" action="prop_exec_acept.php">";
-          echo "<input type="button" name="update" value="aceptar"/>";
-          echo "</form>";
-          echo "<form method="POST" action="prop_exec_rech.php">";
-          echo "<input type="button" name="update" value="rechazar"/>";
-          echo "</form>";
+          ?>
+          <html>
+          <form method='POST' action='prop_exec_acept.php'>
+            <input type='button' name='update' value='aceptar'/>
+          </form>
+          <form method='POST' action='prop_exec_rech.php'>
+          <input type='button' name='update2' value='rechazar'/>
+          </form>
+          </html>
+          <?php
           echo "</tr>";
       }
-      ?>
-
-
+      ?> 
   </table>
-<?php
-  if(isset($_POST['aceptar'])){
-    require("../config/conection.php");
-    $result = $db -> prepare("SELECT DISTINCT fecha_salida, DISTINCT fecha_llegada FROM vuelo;");
-    $result -> execute();
-    $dataCollected = $result -> fetchAll();   
-  }
-?>
 
 <br>
 <h3 align="center"><b>Filtrar por Fecha las Propuestas de Vuelos Pendientes</b></h3>
