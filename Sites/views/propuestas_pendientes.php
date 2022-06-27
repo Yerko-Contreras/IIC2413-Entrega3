@@ -35,7 +35,7 @@
         // echo $resultado;
         foreach ($resultado as $p) {
           echo "<tr>";
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
+          echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
           
           echo "<td><form method='POST' action='prop_exec.php'>";
           echo "<input type='hidden' name='codigo' value='$p[2]'>";
@@ -127,8 +127,14 @@
         echo "<tr>";
         echo "<td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td><td>$p[4]</td><td>$p[5]</td><td>$p[6]</td><td>$p[7]</td><td>$p[8]</td><td>$p[9]</td><td>$p[10]</td>";
 
-        echo "<td><input type='button' name='buysell'  value='aceptar' onclick='select()'></td>";
-        echo "<td><input type='button' name='buysell'  value='rechazar' onclick='insert()'></td>";
+        echo "<td><form method='POST' action='prop_exec.php'>";
+        echo "<input type='hidden' name='codigo' value='$p[2]'>";
+        echo "<input type='submit' name='update' value='aceptar'/>";
+        echo "</form></td>";
+        echo "<td><form method='POST' action='prop_exec.php'>";
+        echo "<input type='hidden' name='codigo' value='$p[2]'>";
+        echo "<input type='submit' name='update2' value='rechazar'/>";
+        echo "</form></td>";
         
         echo "</tr>";     
     }}
