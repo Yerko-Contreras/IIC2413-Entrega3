@@ -39,3 +39,6 @@
     echo" dhur";
     }
 ?>
+<?php
+require('propuestas_pendientes.php')
+?>
