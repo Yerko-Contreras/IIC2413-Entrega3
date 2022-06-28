@@ -6,11 +6,11 @@
             session_start();
             $codigo = $_POST['codigo'];
                
-            $query1 = "UPDATE vuelo SET vuelo.estado='aceptado' WHERE vuelo.codigo_vuelo ='$codigo';";
+            $query1 = "UPDATE vuelo SET estado='aceptado' WHERE codigo_vuelo ='$codigo';";
             $result1 = $db -> prepare($query1);
             $result1 -> execute();
 
-            $query2 = "UPDATE informacion_de_vuelo SET informacion_de_vuelo.estado='aceptado' WHERE informacion_de_vuelo.codigo_vuelo ='$codigo';";
+            $query2 = "UPDATE informacion_de_vuelo SET estado='aceptado' WHERE codigo_vuelo ='$codigo';";
             $result2 = $db2 -> prepare($query2);
             $result2 -> execute();
     }
@@ -27,13 +27,13 @@
             session_start();
             $codigo = $_POST['codigo'];
                
-            $query1 = "UPDATE vuelo SET vuelo.estado='rechazado' WHERE vuelo.codigo_vuelo ='$codigo';";
-            $result1 = $db -> prepare($query1);
-            $result1 -> execute();
+            $query3 = "UPDATE vuelo SET estado='rechazado' WHERE codigo_vuelo ='$codigo';";
+            $result3 = $db -> prepare($query3);
+            $result3 -> execute();
 
-            $query2 = "UPDATE informacion_de_vuelo SET informacion_de_vuelo.estado='rechazado' WHERE informacion_de_vuelo.codigo_vuelo ='$codigo';";
-            $result2 = $db2 -> prepare($query2);
-            $result2 -> execute();
+            $query4 = "UPDATE informacion_de_vuelo SET estado='rechazado' WHERE codigo_vuelo ='$codigo';";
+            $result4 = $db2 -> prepare($query4);
+            $result4 -> execute();
     }
     else {
     echo" dhur";
