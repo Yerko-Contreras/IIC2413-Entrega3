@@ -15,6 +15,7 @@
 <br>
 <h3 align="center"><b>Lista de Vuelos Pendientes</b></h3>
 <br>
+<div class="table-container">
   <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
     <tr>
       <th>Propuesta vuelo ID</th>
@@ -50,7 +51,7 @@
       }
       ?> 
   </table>
-
+</div>
 <br>
 <h3 align="center"><b>Filtrar por Fecha las Propuestas de Vuelos Pendientes</b></h3>
 <br>
