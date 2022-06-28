@@ -10,7 +10,7 @@
             $result1 = $db -> prepare($query1);
             $result1 -> execute();
 
-            $query2 = "UPDATE informacion_de_vuelo SET estado='aceptado' WHERE codigo_vuelo ='$codigo';";
+            $query2 = "UPDATE informacion_de_vuelo SET estado='aceptado' WHERE codigo ='$codigo';";
             $result2 = $db2 -> prepare($query2);
             $result2 -> execute();
     }
@@ -31,7 +31,7 @@
             $result3 = $db -> prepare($query3);
             $result3 -> execute();
 
-            $query4 = "UPDATE informacion_de_vuelo SET estado='rechazado' WHERE codigo_vuelo ='$codigo';";
+            $query4 = "UPDATE informacion_de_vuelo SET estado='rechazado' WHERE codigo ='$codigo';";
             $result4 = $db2 -> prepare($query4);
             $result4 -> execute();
     }
