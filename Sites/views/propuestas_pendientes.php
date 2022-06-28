@@ -105,6 +105,7 @@
   ?>
   <h3 align="center"><b>Vuelos Pendientes</b></h3>
   <br>
+  <div class="table_container">
 	<table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-background-info-light' align="center">
   <tr>
     <th>Propuesta vuelo ID</th>
@@ -140,5 +141,6 @@
     }}
     ?>
 </table>
+  </div>
 
 <?php include('../templates/footer.html'); ?>
