@@ -41,5 +41,5 @@
 ?>
 
 <?php
-require('admin_DGAC.php')
+require('admin_DGAC.php');
 ?>
