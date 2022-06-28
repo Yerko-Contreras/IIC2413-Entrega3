@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['update'])){
-        echo("You clicked button 1!");
+        echo("You clicked button ACEPTAR!");
         //and then execute a sql query here
         require("../config/conection.php");
             session_start();
@@ -21,7 +21,7 @@
 
 <?php
     if(isset($_POST['update2'])){
-        echo("You clicked button 2!");
+        echo("You clicked button RECHAZAR!");
         //and then execute a sql query here
         require("../config/conection.php");
             session_start();
@@ -38,8 +38,4 @@
     else {
     echo" dhur";
     }
-?>
-
-<?php
-require('admin_DGAC.php');
 ?>
